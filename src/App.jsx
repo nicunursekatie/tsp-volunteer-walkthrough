@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import coldChainDiagram from "./assets/cold-chain-diagram.png";
+import tspLogo from "./assets/tsp-logo.jpg";
 
 const TEAL = "#1A7A8A";
 const TEAL_DARK = "#126270";
@@ -82,6 +84,7 @@ const FOOD_SAFETY_STEPS = [
         <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginBottom: 20 }}>
           If any link breaks, the food may no longer be safe. <strong>Your job — whatever your role — is to keep your link intact.</strong>
         </p>
+        <img src={coldChainDiagram} alt="The Sandwich Project Cold Chain: 1. Store purchase, 2. Car with cooler and ice packs, 3. Fridge at event, 4. Quick prep (one package meat/cheese per table), 5. Assembled back to fridge, 6. Refrigerated until driver arrives" style={{ width: "100%", borderRadius: 10, marginBottom: 20 }} />
         <CalloutBox type="critical" title="Critical Temperature Rules">
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -720,8 +723,7 @@ export default function App() {
     return (
       <div style={{ minHeight: "100vh", background: `linear-gradient(170deg, ${TEAL_WASH} 0%, white 40%, ${GOLD_LIGHT} 100%)`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "40px 20px", fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif" }}>
         <div style={{ textAlign: "center", maxWidth: 520 }}>
-          <div style={{ fontSize: 52, marginBottom: 8 }}>🥪</div>
-          <h1 style={{ fontFamily: "Georgia, serif", fontSize: 32, fontWeight: 700, color: TEAL_DARK, marginBottom: 6, letterSpacing: -0.5 }}>The Sandwich Project</h1>
+          <img src={tspLogo} alt="The Sandwich Project" style={{ width: "100%", maxWidth: 360, marginBottom: 16 }} />
           <div style={{ fontSize: 11, color: GOLD_DARK, textTransform: "uppercase", letterSpacing: 3, fontWeight: 600, marginBottom: 24 }}>Volunteer Walkthrough</div>
           <div style={{ width: 60, height: 3, background: GOLD, margin: "0 auto 28px", borderRadius: 2 }} />
           <p style={{ color: BODY_COLOR, fontSize: 16, lineHeight: 1.7, marginBottom: 36 }}>
