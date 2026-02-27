@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import coldChainDiagram from "./assets/cold-chain-diagram.png";
-import tspLogo from "./assets/tsp-logo.jpg";
+import coldChainDiagram from "./assets/cold-chain-diagram.jpg";
+import tspLogo from "./assets/tsp-logo.png";
 
 const TEAL = "#1A7A8A";
 const TEAL_DARK = "#126270";
