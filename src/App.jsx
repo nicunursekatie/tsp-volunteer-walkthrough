@@ -25,7 +25,7 @@ const WELCOME_STEPS = [
     content: (
       <div>
         <p style={{ fontSize: 17, lineHeight: 1.7, color: DARK, marginBottom: 16 }}>
-          What started in 2014 as two moms making sandwiches on their kitchen counters has grown into a volunteer-powered network serving thousands of sandwiches to neighbors experiencing food insecurity across Metro Atlanta.
+          Founded in 2020, The Sandwich Project is a 501(c)(3) volunteer-powered nonprofit that has rallied over 25,000 volunteers to make and deliver more than 2.3 million sandwiches to neighbors experiencing food insecurity across Metro Atlanta.
         </p>
         <p style={{ color: BODY_COLOR, lineHeight: 1.65 }}>
           This walkthrough will give you everything you need to volunteer safely and effectively — whether you're making sandwiches, hosting a collection point, or delivering to organizations.
@@ -37,7 +37,7 @@ const WELCOME_STEPS = [
     title: "How It Works",
     content: (
       <div>
-        <p style={{ color: BODY_COLOR, marginBottom: 20, lineHeight: 1.65 }}>Every week, volunteers work together in a relay-style system:</p>
+        <p style={{ color: BODY_COLOR, marginBottom: 20, lineHeight: 1.65 }}>Every week, volunteers work together to make it happen:</p>
         {[
           { num: "1", role: "Sandwich Makers", desc: "Purchase ingredients, assemble sandwiches at home, and deliver them to a host." },
           { num: "2", role: "Hosts", desc: "Collect and refrigerate sandwiches from makers, then prep coolers for transport." },
