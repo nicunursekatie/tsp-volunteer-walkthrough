@@ -90,8 +90,8 @@ const FOOD_SAFETY_STEPS = [
               <span><strong>39°F</strong> — Absolute max for meat & cheese</span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <span style={{ background: RED, color: "white", padding: "3px 10px", borderRadius: 4, fontSize: 11, fontWeight: 700, letterSpacing: 0.5, whiteSpace: "nowrap" }}>DANGER</span>
-              <span><strong>Above 80°F</strong> — Bacteria multiply rapidly</span>
+              <span style={{ background: RED, color: "white", padding: "3px 10px", borderRadius: 4, fontSize: 11, fontWeight: 700, letterSpacing: 0.5, whiteSpace: "nowrap" }}>TOSS IT</span>
+              <span><strong>80°F+</strong> — If meat ever reaches this temp, throw it out immediately</span>
             </div>
           </div>
         </CalloutBox>
