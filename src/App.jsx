@@ -24,11 +24,11 @@ const WELCOME_STEPS = [
     title: "Welcome to TSP",
     content: (
       <div>
-        <p style={{ fontSize: 17, lineHeight: 1.7, color: DARK, marginBottom: 16 }}>
-          Founded in 2020, The Sandwich Project is a 501(c)(3) volunteer-powered nonprofit that has rallied over 25,000 volunteers to make and deliver more than 2.3 million sandwiches to neighbors experiencing food insecurity across Metro Atlanta.
-        </p>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65 }}>
-          This walkthrough will give you everything you need to volunteer safely and effectively — whether you're making sandwiches, hosting a collection point, or delivering to organizations.
+        <CalloutBox type="teal" title="Who We Are">
+          <strong>The Sandwich Project</strong> is a 501(c)(3) volunteer-powered nonprofit in Metro Atlanta. Since 2020: <strong>25,000+ volunteers</strong> and <strong>2.3 million sandwiches</strong> delivered to neighbors experiencing food insecurity.
+        </CalloutBox>
+        <p style={{ color: BODY_COLOR, lineHeight: 1.65, fontSize: 15, marginTop: 12 }}>
+          This walkthrough covers <strong>everything you need</strong> — takes about 10 minutes.
         </p>
       </div>
     ),
@@ -37,11 +37,11 @@ const WELCOME_STEPS = [
     title: "How It Works",
     content: (
       <div>
-        <p style={{ color: BODY_COLOR, marginBottom: 20, lineHeight: 1.65 }}>Every week, volunteers work together to make it happen:</p>
+        <p style={{ color: BODY_COLOR, marginBottom: 16, fontWeight: 600, fontSize: 15 }}>Three roles. One chain. Every week.</p>
         {[
-          { num: "1", role: "Sandwich Makers", desc: "Purchase ingredients, assemble sandwiches at home, and deliver them to a host." },
-          { num: "2", role: "Hosts", desc: "Collect and refrigerate sandwiches from makers, then prep coolers for transport." },
-          { num: "3", role: "Drivers", desc: "Pick up from hosts and deliver to 501(c)(3) organizations that distribute to people in need." },
+          { num: "1", role: "Sandwich Makers", desc: "Buy ingredients → assemble at home → deliver to a host" },
+          { num: "2", role: "Hosts", desc: "Collect from makers → refrigerate → pack coolers for drivers" },
+          { num: "3", role: "Drivers", desc: "Pick up from hosts → deliver to 501(c)(3) organizations" },
         ].map((s) => (
           <div key={s.num} style={{ display: "flex", gap: 14, marginBottom: 14, alignItems: "flex-start" }}>
             <div style={{ width: 36, height: 36, borderRadius: "50%", background: TEAL, color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: 15, flexShrink: 0 }}>{s.num}</div>
@@ -59,14 +59,11 @@ const WELCOME_STEPS = [
     title: "Why Food Safety Matters",
     content: (
       <div>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginBottom: 16 }}>
-          Our sandwiches are made in home kitchens and pass through multiple hands before reaching the people who eat them. That makes our food safety standards <strong>even more important</strong> — not less.
-        </p>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginBottom: 20 }}>
-          The people receiving these sandwiches are trusting us to get it right. Every guideline exists for one reason: to ensure every sandwich is safe to eat when it reaches the person who needs it.
-        </p>
+        <CalloutBox type="critical" title="The Bottom Line">
+          Home kitchens → multiple handoffs → people who are trusting us. Our standards have to be <strong>higher</strong>, not lower.
+        </CalloutBox>
         <CalloutBox type="gold" title="The Golden Rule">
-          <strong>When in doubt, throw it out.</strong> A wasted sandwich is disappointing. A sandwich that makes someone sick is harmful. We always err on the side of safety.
+          <strong>When in doubt, throw it out.</strong><br/>A wasted sandwich is disappointing. A sandwich that makes someone sick is harmful.
         </CalloutBox>
       </div>
     ),
@@ -78,26 +75,23 @@ const FOOD_SAFETY_STEPS = [
     title: "The Cold Chain",
     content: (
       <div>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginBottom: 16 }}>
-          The cold chain is the continuous path of refrigeration from the moment ingredients are purchased to the moment sandwiches reach the recipient organization.
-        </p>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginBottom: 20 }}>
-          If any link breaks, the food may no longer be safe. <strong>Your job — whatever your role — is to keep your link intact.</strong>
-        </p>
+        <CalloutBox type="teal" title="One Sentence">
+          <strong>Your job is to keep your link in the cold chain intact.</strong> If any link breaks, the food may not be safe.
+        </CalloutBox>
         <img src={coldChainDiagram} alt="The Sandwich Project Cold Chain: 1. Store purchase, 2. Car with cooler and ice packs, 3. Fridge at event, 4. Quick prep (one package meat/cheese per table), 5. Assembled back to fridge, 6. Refrigerated until driver arrives" style={{ width: "100%", borderRadius: 10, marginBottom: 20 }} />
-        <CalloutBox type="critical" title="Critical Temperature Rules">
+        <CalloutBox type="critical" title="Know These Numbers">
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <span style={{ background: TEAL, color: "white", padding: "3px 10px", borderRadius: 4, fontSize: 11, fontWeight: 700, letterSpacing: 0.5, whiteSpace: "nowrap" }}>TARGET</span>
+              <span><strong>34–38°F</strong> — Keep your fridge here</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <span style={{ background: RED, color: "white", padding: "3px 10px", borderRadius: 4, fontSize: 11, fontWeight: 700, letterSpacing: 0.5, whiteSpace: "nowrap" }}>MAX SAFE</span>
-              <span><strong>39°F</strong> — Deli meat and cheese must stay at or below this at all times.</span>
+              <span><strong>39°F</strong> — Absolute max for meat & cheese</span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <span style={{ background: RED, color: "white", padding: "3px 10px", borderRadius: 4, fontSize: 11, fontWeight: 700, letterSpacing: 0.5, whiteSpace: "nowrap" }}>DANGER</span>
-              <span><strong>Above 80°F</strong> — Bacteria multiply rapidly. Absolute ceiling for any exposure.</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <span style={{ background: TEAL, color: "white", padding: "3px 10px", borderRadius: 4, fontSize: 11, fontWeight: 700, letterSpacing: 0.5, whiteSpace: "nowrap" }}>TARGET</span>
-              <span><strong>34–38°F</strong> — Ideal refrigerator range for sandwich storage.</span>
+              <span><strong>Above 80°F</strong> — Bacteria multiply rapidly</span>
             </div>
           </div>
         </CalloutBox>
@@ -108,23 +102,23 @@ const FOOD_SAFETY_STEPS = [
     title: "The Two-Hour Rule",
     content: (
       <div>
-        <CalloutBox type="critical" title="Cumulative — Not Per Step">
-          Deli meat can spend a <strong>maximum of 2 hours total</strong> above 39°F — cumulative across all handoffs. This isn't 2 hours per step. It's 2 hours total, from purchase to delivery.
+        <CalloutBox type="critical" title="This Is Cumulative">
+          Deli meat gets <strong>2 hours total</strong> above 39°F — across <em>all</em> handoffs combined. Not 2 hours per step. <strong>2 hours total.</strong>
         </CalloutBox>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginTop: 16 }}>
-          Every minute your sandwiches spend above 39°F counts toward that two-hour limit. Plan your shopping trips, assembly time, and transport accordingly.
+        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginTop: 16, fontSize: 14 }}>
+          Every minute above 39°F counts. Plan your shopping, assembly, and transport to minimize warm time.
         </p>
       </div>
     ),
   },
   {
-    title: "Refrigeration Best Practices",
+    title: "Refrigeration Tips",
     content: (
       <div>
         <BulletList items={[
-          <><strong>Don't overfill.</strong> Airflow keeps temperatures consistent. An overpacked fridge creates warm spots, even if the thermometer reads correctly.</>,
-          <><strong>Minimize door openings.</strong> Every time you open the fridge, cold air escapes and the temperature rises. In and out quickly.</>,
-          <><strong>Hot weather shortcut:</strong> If ambient temperatures are high, place sealed sandwich bags in the freezer for 15–20 minutes before moving them to the fridge.</>,
+          <><strong>Don't overfill.</strong> Overpacked fridge = warm spots, even if the thermometer looks fine.</>,
+          <><strong>Minimize door openings.</strong> Cold air escapes every time. In and out quickly.</>,
+          <><strong>Hot weather trick:</strong> Put sealed sandwich bags in the freezer for 15–20 min before moving to the fridge.</>,
         ]} />
       </div>
     ),
@@ -134,14 +128,14 @@ const FOOD_SAFETY_STEPS = [
     content: (
       <div>
         <CalloutBox type="teal" title="Key Concept">
-          <strong>Coolers maintain cold — they don't create it.</strong> Only pack food that's already fridge-cold. Never put warm food in a cooler and expect it to cool down.
+          <strong>Coolers maintain cold — they don't create it.</strong> Only pack food that's already fridge-cold.
         </CalloutBox>
         <BulletList items={[
-          <>Keep coolers in the vehicle <strong>cabin, not the trunk.</strong> A/C only reaches the cabin.</>,
-          <>Layer ice packs between loaves and on top.</>,
-          <>Pack tightly — less air space = colder longer.</>,
-          <>Keep lids sealed. Every opening lets cold air escape.</>,
-          <>Never pack a warm cooler — bring it inside to cool down first.</>,
+          <><strong>Cabin, not trunk.</strong> A/C doesn't reach the trunk.</>,
+          <><strong>Layer ice packs</strong> between loaves and on top.</>,
+          <><strong>Pack tightly</strong> — less air = stays colder longer.</>,
+          <><strong>Keep lids sealed.</strong> Every opening lets cold air out.</>,
+          <><strong>Hot cooler?</strong> Bring it inside to cool down before packing.</>,
         ]} />
       </div>
     ),
@@ -150,15 +144,15 @@ const FOOD_SAFETY_STEPS = [
     title: "Hygiene",
     content: (
       <div>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginBottom: 16 }}>Follow these steps every time, in order:</p>
+        <p style={{ color: BODY_COLOR, fontWeight: 600, marginBottom: 14, fontSize: 15 }}>Every time. In this order.</p>
         <NumberedSteps steps={[
-          <><strong>Restrain hair first</strong> (tie back, hat, or hairnet), then wash hands.</>,
-          <><strong>Wash with soap and water</strong> for at least 20 seconds. Hand sanitizer is not a substitute.</>,
-          <><strong>Wear food-safe gloves</strong> during all food handling. Change them if you touch your face, phone, or any non-food surface.</>,
-          <><strong>Clean all surfaces</strong> that will contact food before you begin.</>,
+          <><strong>Hair first</strong> — tie back, hat, or hairnet.</>,
+          <><strong>Wash hands</strong> with soap & water, 20+ seconds. Sanitizer is <em>not</em> a substitute — alcohol residue can transfer to gloves and food.</>,
+          <><strong>Glove up</strong> — food-safe gloves for all handling. Change if you touch your face, phone, or anything non-food.</>,
+          <><strong>Clean surfaces</strong> — wipe down everything food will touch. Cover your work surface with a disposable tablecloth.</>,
         ]} />
         <CalloutBox type="gold" title="Remember">
-          <strong>Re-cooling does not reverse bacterial growth.</strong> Once food has been in the danger zone too long, chilling it again doesn't make it safe. When in doubt, throw it out.
+          <strong>Re-cooling doesn't undo bacterial growth.</strong> If food sat out too long, putting it back in the fridge won't fix it. When in doubt, throw it out.
         </CalloutBox>
       </div>
     ),
@@ -170,11 +164,12 @@ const MAKER_STEPS = [
     title: "Shopping",
     content: (
       <div>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginBottom: 16 }}>You're the starting point of the cold chain. What you buy matters.</p>
+        <p style={{ color: BODY_COLOR, fontWeight: 600, marginBottom: 14, fontSize: 15 }}>You're the start of the cold chain.</p>
         <BulletList items={[
-          <><strong>Buy prepackaged deli meat and cheese only</strong> — no deli counter slicing. Prepackaged products have controlled processing environments and clear expiration dates.</>,
-          <>Check that expiration dates are <strong>at least 7 days past your drop-off date.</strong></>,
-          <>Get cold items into your fridge within 30 minutes of purchase.</>,
+          <><strong>Prepackaged deli meat & cheese only</strong> — no deli counter slicing.</>,
+          <><strong>Expiration dates:</strong> at least 7 days past your drop-off date.</>,
+          <><strong>Bring a cooler with ice packs</strong> to the store for the drive home.</>,
+          <><strong>Into the fridge within 30 minutes</strong> of purchase.</>,
         ]} />
       </div>
     ),
@@ -186,8 +181,8 @@ const MAKER_STEPS = [
         <InfoGrid rows={[
           ["Opened deli meat", "Use within 3 days"],
           ["Unopened deli meat & cheese", "Use within 2 weeks of purchase"],
-          ["Bread", "Room temp; check for mold before use"],
-          ["Peanut butter & jelly", "Shelf-stable; check expiration"],
+          ["Bread", "Room temp — check for mold before use"],
+          ["Peanut butter & jelly", "Shelf-stable — check expiration"],
         ]} />
       </div>
     ),
@@ -197,7 +192,7 @@ const MAKER_STEPS = [
     content: (
       <div>
         <CalloutBox type="teal" title="Assembly Window">
-          <strong>Make sandwiches on Wednesday or Tuesday evening only.</strong> Deliver to your host within 24 hours of assembly. This ensures freshness and keeps us within safe time windows.
+          <strong>Make on Wednesday or Tuesday evening.</strong><br/>Deliver to your host within 24 hours.
         </CalloutBox>
       </div>
     ),
@@ -206,13 +201,13 @@ const MAKER_STEPS = [
     title: "PB&J Assembly",
     content: (
       <div>
-        <RecipeCard title="PB&J Sandwiches" subtitle="Exact measurements for consistency">
+        <RecipeCard title="PB&J Sandwiches" subtitle="Use jelly — not jam">
           <NumberedSteps steps={[
-            <>Spread <strong>1 tablespoon peanut butter</strong> on one slice of bread.</>,
-            <>Spread <strong>2 tablespoons peanut butter</strong> on the other slice.</>,
-            <>Add <strong>2 teaspoons jelly</strong> on top of the 2-tablespoon side.</>,
-            <>Press slices together. Do <strong>not</strong> cut.</>,
-            <>Bag each sandwich individually in a sandwich-size zip-top bag. Press out excess air.</>,
+            <><strong>1 tbsp peanut butter</strong> on one slice.</>,
+            <><strong>2 tbsp peanut butter</strong> on the other slice.</>,
+            <><strong>2 tsp jelly</strong> on top of the 2-tbsp side.</>,
+            <>Press together. <strong>Don't cut.</strong></>,
+            <>Bag individually in a zip-top bag. Press out air.</>,
           ]} />
         </RecipeCard>
       </div>
@@ -222,22 +217,31 @@ const MAKER_STEPS = [
     title: "Deli Sandwich Assembly",
     content: (
       <div>
-        <RecipeCard title="Deli Sandwiches" subtitle="Keep it simple — bread, meat, cheese only">
-          <BulletList items={[
-            <>Two slices of bread, deli meat, and cheese. <strong>That's it.</strong></>,
-            <><strong>No condiments. No vegetables. No exceptions.</strong> Condiments and veggies accelerate spoilage in uncontrolled environments.</>,
-            <>Do <strong>not</strong> cut.</>,
-            <>Bag each sandwich individually. Press out excess air.</>,
+        <RecipeCard title="Deli Sandwiches" subtitle="Bread + meat + cheese. That's it.">
+          <NumberedSteps steps={[
+            <>Two slices of bread.</>,
+            <><strong>Minimum 2 oz deli meat.</strong></>,
+            <><strong>2 slices of cheese</strong> — one on each side of the bread.</>,
+            <><strong>Don't cut.</strong> Bag individually, press out air.</>,
           ]} />
+          <CalloutBox type="critical" title="No Extras">
+            <strong>No condiments. No vegetables. No exceptions.</strong> They accelerate spoilage in our transport chain.
+          </CalloutBox>
         </RecipeCard>
-        <div style={{ marginTop: 16 }}>
-          <p style={{ fontWeight: 700, color: DARK, marginBottom: 8 }}>Packaging</p>
-          <BulletList items={[
-            <>Place bagged sandwiches into bread loaf bags — PB&J in one, deli in another.</>,
-            <>Close loaf bags securely with twist ties.</>,
-            <>You do <strong>not</strong> need to label individual sandwiches — your host will provide labels.</>,
-          ]} />
-        </div>
+      </div>
+    ),
+  },
+  {
+    title: "Packaging",
+    content: (
+      <div>
+        <BulletList items={[
+          <><strong>Work in batches</strong> — keep only one package of meat/cheese out at a time. Refrigerate the rest.</>,
+          <>Bag each sandwich individually in a zip-top bag.</>,
+          <>Group bagged sandwiches into bread loaf bags — <strong>PB&J and deli separate.</strong></>,
+          <>Close loaf bags with twist ties.</>,
+          <>You do <strong>not</strong> need to label — your host provides labels.</>,
+        ]} />
       </div>
     ),
   },
@@ -245,15 +249,15 @@ const MAKER_STEPS = [
     title: "Transport & Host Selection",
     content: (
       <div>
-        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, fontSize: 15 }}>Transport to Your Host</p>
+        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, fontSize: 15 }}>Getting Sandwiches to Your Host</p>
         <BulletList items={[
-          <>Sandwiches must be <strong>fridge-cold before going into the cooler.</strong></>,
-          <>Layer ice packs between loaves.</>,
-          <>Keep the cooler in the vehicle <strong>cabin</strong> — not the trunk.</>,
-          <>Drive directly to your host. No detours, no errands.</>,
+          <><strong>Fridge-cold before the cooler.</strong> Coolers maintain — they don't chill.</>,
+          <><strong>Ice packs</strong> layered between loaves.</>,
+          <><strong>Cabin, not trunk.</strong></>,
+          <><strong>Drive direct.</strong> No detours, no errands.</>,
         ]} />
         <CalloutBox type="gold" title="Choosing a Host">
-          Sandwich makers choose any available host using the <strong>Host Finder</strong> at <strong>www.thesandwichproject.org</strong>. You can switch hosts anytime — just check Host Finder for current availability.
+          Use the <strong>Host Finder</strong> at <strong>thesandwichproject.org</strong>. You can switch hosts anytime.
         </CalloutBox>
       </div>
     ),
@@ -263,9 +267,9 @@ const MAKER_STEPS = [
     content: (
       <div>
         <FAQList items={[
-          { q: "Can I add mustard, mayo, lettuce, or tomato?", a: "No. Deli sandwiches are bread, meat, and cheese only. Condiments and vegetables accelerate spoilage and aren't safe in our transport chain." },
-          { q: "Can I use deli counter meat?", a: "No. Prepackaged only. Deli counter slicing introduces additional contamination risk and lacks clear expiration tracking." },
-          { q: "What if I can't deliver by Thursday?", a: "Don't make them. We'd rather have fewer sandwiches than sandwiches that aren't fresh. Reach out to your host if your schedule changes." },
+          { q: "Can I add mustard, mayo, lettuce, or tomato?", a: "No. Bread, meat, and cheese only. Extras accelerate spoilage." },
+          { q: "Can I use deli counter meat?", a: "No. Prepackaged only — it has clearer expiration tracking and controlled processing." },
+          { q: "What if I can't deliver by Thursday?", a: "Don't make them. Fewer sandwiches is better than unsafe ones." },
         ]} />
       </div>
     ),
@@ -277,11 +281,11 @@ const HOST_STEPS = [
     title: "Your Role & Support",
     content: (
       <div>
-        <p style={{ fontSize: 16, lineHeight: 1.7, color: DARK, marginBottom: 16 }}>
-          You're the hub of the operation — the central link between sandwich makers and drivers. Your quality checks keep our food safe.
-        </p>
-        <CalloutBox type="gold" title="Your Support System">
-          You're assigned to a <strong>team with a lead host</strong> who's your go-to for questions, scheduling, and troubleshooting. TSP provides training before your first collection. You're never expected to figure it out alone.
+        <CalloutBox type="teal" title="You're the Hub">
+          You connect <strong>sandwich makers → drivers</strong>. Your quality checks are the last line of defense before delivery.
+        </CalloutBox>
+        <CalloutBox type="gold" title="You're Not Alone">
+          You'll be on a <strong>team with a lead host</strong> — your go-to for questions, scheduling, and troubleshooting. TSP trains you before your first collection.
         </CalloutBox>
       </div>
     ),
@@ -297,8 +301,8 @@ const HOST_STEPS = [
           ["Sign-in sheets & labels", ""],
           ["Web app access", ""],
         ]} header />
-        <CalloutBox type="gold" title="TSP Web App">
-          Your team lead will get you set up before your first collection day. Access at <strong>www.thesandwichproject.org</strong> (click "Core Team Access").
+        <CalloutBox type="gold" title="Web App Access">
+          Your lead will set you up before your first day. Go to <strong>thesandwichproject.org</strong> → "Core Team Access."
         </CalloutBox>
       </div>
     ),
@@ -307,13 +311,13 @@ const HOST_STEPS = [
     title: "Preparing Your Space",
     content: (
       <div>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginBottom: 16 }}>Your refrigerator is the most important piece of equipment you provide. Before each collection:</p>
+        <p style={{ color: BODY_COLOR, fontWeight: 600, marginBottom: 14, fontSize: 15 }}>Your fridge is your most important tool. Before each collection:</p>
         <BulletList items={[
-          <>Clean the refrigerator and remove personal food items to maximize space.</>,
-          <>Verify temperature is between 34–38°F. <strong>Check it — don't just assume.</strong></>,
-          <>Leave room for airflow — an overfilled fridge creates warm spots that compromise food safety.</>,
-          <>Keep the area clean, uncluttered, and free of strong odors.</>,
-          <>Store everything off the floor, away from pets, trash, chemicals, and tools.</>,
+          <><strong>Clean it out.</strong> Remove personal food to maximize space.</>,
+          <><strong>Check temp: 34–38°F.</strong> Don't assume — verify.</>,
+          <><strong>Leave room for airflow.</strong> Overpacked = warm spots.</>,
+          <><strong>Keep area clean</strong> — no strong odors, no clutter.</>,
+          <><strong>Off the floor.</strong> Away from pets, trash, chemicals.</>,
         ]} />
       </div>
     ),
@@ -322,27 +326,27 @@ const HOST_STEPS = [
     title: "Wednesday: Collection Day",
     content: (
       <div>
-        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10 }}>Before Drop-Offs Begin</p>
+        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, fontSize: 14 }}>Before Drop-Offs</p>
         <BulletList items={[
-          <>Place a donation bin in an accessible spot for fruit/snack collections.</>,
-          <>Set up your sign-in station: sign-in sheets, deli and PB&J labels (keep them separate), and pens.</>,
-          <>Put out the TSP yard sign so volunteers can find you.</>,
+          <>Set out donation bin for fruit/snack collections.</>,
+          <>Set up sign-in station: sheets, labels (deli & PB&J separate), pens.</>,
+          <>Put out TSP yard sign.</>,
         ]} />
-        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 20 }}>As Volunteers Arrive</p>
+        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 18, fontSize: 14 }}>As Volunteers Arrive</p>
         <BulletList items={[
-          <>Greet volunteers warmly — it keeps sandwich makers engaged and wanting to come back.</>,
-          <>Have them sign in and record their sandwich count and contact info.</>,
-          <>Have them label their sandwiches using the host-provided labels.</>,
-          <><strong>Check sandwiches are sealed, properly labeled, and cold to the touch.</strong> Cold = refrigerator-cold.</>,
-          <>Verify label dates are no earlier than Tuesday evening.</>,
+          <><strong>Greet warmly</strong> — it keeps makers coming back.</>,
+          <>Sign in + record sandwich count & contact info.</>,
+          <>Have them label sandwiches with host-provided labels.</>,
+          <><strong>Check: sealed? labeled? cold to the touch?</strong></>,
+          <>Dates no earlier than Tuesday evening.</>,
         ]} />
-        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 20 }}>Storing Sandwiches</p>
+        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 18, fontSize: 14 }}>Storing</p>
         <BulletList items={[
-          <>Refrigerate promptly with room for airflow. Minimize time the fridge door is open.</>,
-          <><strong>Keep PB&J and Deli in separate coolers</strong> for transport.</>,
+          <>Refrigerate right away. Minimize fridge door time.</>,
+          <><strong>PB&J and deli stay in separate coolers</strong> for transport.</>,
         ]} />
         <CalloutBox type="critical" title="Allergy Warning">
-          TSP sandwiches are not safe for anyone with food allergies due to the ingredients and shared preparation environments.
+          TSP sandwiches are <strong>not safe for anyone with food allergies</strong> — ingredients and shared prep environments.
         </CalloutBox>
       </div>
     ),
@@ -351,20 +355,18 @@ const HOST_STEPS = [
     title: "Thursday: Delivery Prep",
     content: (
       <div>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginBottom: 16 }}>Thursday morning — getting everything packed and ready for your driver. This is a critical cold chain handoff.</p>
+        <p style={{ color: BODY_COLOR, fontWeight: 600, marginBottom: 14, fontSize: 15 }}>Pack coolers for your driver. This is a critical handoff.</p>
         <BulletList items={[
-          <>If a cooler's been in the heat, bring it inside to cool down. <strong>Never pack a warm cooler.</strong></>,
-          <>Confirm sandwiches are under 39°F before packing.</>,
-          <>Layer ice packs between loaves and on top — every loaf should touch an ice pack.</>,
-          <>Pack tightly (tight = colder longer).</>,
-          <>Work in the shade. Keep fridge door and cooler lids closed between loads.</>,
+          <><strong>Hot cooler?</strong> Bring it inside to cool first. Never pack a warm cooler.</>,
+          <><strong>Confirm sandwiches are under 39°F</strong> before packing.</>,
+          <><strong>Ice packs:</strong> layer between loaves and on top. Every loaf touches ice.</>,
+          <><strong>Pack tight</strong> — less air = stays colder.</>,
+          <>Work in shade. Keep doors/lids closed between loads.</>,
         ]} />
-        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 20 }}>Quality Check Before Handoff</p>
+        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 18, fontSize: 14 }}>Quick Checklist Before Handoff</p>
         <BulletList items={[
-          <>All sandwiches properly sealed</>,
-          <>TSP labels complete and legible</>,
-          <>Sandwiches cold to the touch</>,
-          <>Loaf bags closed with twist ties</>,
+          <>Sealed? Labeled? Cold to the touch?</>,
+          <>Loaf bags closed with twist ties?</>,
         ]} />
       </div>
     ),
@@ -373,14 +375,14 @@ const HOST_STEPS = [
     title: "Handling Quality Issues",
     content: (
       <div>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginBottom: 16 }}>Occasionally you'll receive sandwiches that don't meet guidelines. Handle it gracefully:</p>
+        <p style={{ color: BODY_COLOR, fontWeight: 600, marginBottom: 14, fontSize: 15 }}>It happens. Handle it gracefully.</p>
         <BulletList items={[
-          <><strong>Torn bags:</strong> Transfer to a new bag if individual wrappers are intact.</>,
-          <><strong>Missing labels:</strong> Ask the volunteer to label them. Confirm made within 24 hours.</>,
-          <><strong>Warm, spoiled, or messy:</strong> Can't be accepted. "We can only take sandwiches that are cold to the touch" is enough.</>,
+          <><strong>Torn bags →</strong> transfer to a new bag if individual wrappers are intact.</>,
+          <><strong>Missing labels →</strong> ask them to label. Confirm made within 24 hours.</>,
+          <><strong>Warm / spoiled / messy →</strong> can't accept. Say: "We can only take sandwiches that are cold to the touch."</>,
         ]} />
         <CalloutBox type="teal" title="If Sandwiches Seem Unsafe">
-          Set them aside. Mark "DO NOT USE" with the reason (e.g., WARM, OPEN BAG) and contact your lead host. This protects recipients and helps us track patterns.
+          Set aside. Mark <strong>"DO NOT USE"</strong> + reason (WARM, OPEN BAG, etc.). Contact your lead host.
         </CalloutBox>
       </div>
     ),
@@ -389,19 +391,19 @@ const HOST_STEPS = [
     title: "Cleaning & Schedules",
     content: (
       <div>
-        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10 }}>Refrigerator</p>
+        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, fontSize: 14 }}>Fridge</p>
         <BulletList items={[
-          <>Regular wipe-downs. Keep personal food separate.</>,
-          <>Minimize door-open time. Work in shade when loading coolers.</>,
+          <>Wipe down regularly. Personal food separate.</>,
+          <>Minimize door-open time.</>,
         ]} />
-        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 16 }}>Coolers</p>
+        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 16, fontSize: 14 }}>Coolers</p>
         <BulletList items={[
-          <>Wash with soap and warm water after each use. Air-dry fully.</>,
-          <>TSP coolers for TSP sandwiches only — no raw meat, fish, or other items.</>,
+          <>Soap + warm water after each use. Air-dry fully.</>,
+          <><strong>TSP coolers = TSP sandwiches only.</strong> No raw meat, fish, etc.</>,
         ]} />
-        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 16 }}>Monthly Schedules</p>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65 }}>
-          Each month, a team member sends a Google Form to record any weeks you're unavailable. Remind your sandwich makers to subscribe to the weekly newsletter.
+        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 16, fontSize: 14 }}>Monthly Schedules</p>
+        <p style={{ color: BODY_COLOR, lineHeight: 1.65, fontSize: 14 }}>
+          A team member sends a Google Form monthly for unavailable weeks. Remind your makers to subscribe to the weekly newsletter.
         </p>
       </div>
     ),
@@ -411,9 +413,9 @@ const HOST_STEPS = [
     content: (
       <div>
         <FAQList items={[
-          { q: "What if a volunteer brings warm sandwiches?", a: "It's awkward, but food safety comes first. Let them know sandwiches need to be cold to the touch. If questionable, set aside, mark 'DO NOT USE,' and check with your lead host." },
-          { q: "Can I use TSP coolers for personal use?", a: "No — even small cross-contamination creates a safety issue. TSP coolers stay dedicated to TSP sandwiches." },
-          { q: "What about leftover unopened ingredients?", a: "Accept unopened packages — we'll donate them. Discard any open meat." },
+          { q: "What if a volunteer brings warm sandwiches?", a: "Awkward, but food safety wins. Sandwiches must be cold to the touch. Set aside questionable ones, mark 'DO NOT USE,' and check with your lead." },
+          { q: "Can I use TSP coolers for personal use?", a: "No. Any cross-contamination is a safety issue. TSP coolers = TSP only." },
+          { q: "What about leftover unopened ingredients?", a: "Accept unopened packages to donate. Discard any open meat." },
         ]} />
       </div>
     ),
@@ -425,13 +427,13 @@ const DRIVER_STEPS = [
     title: "Your Role",
     content: (
       <div>
-        <p style={{ fontSize: 16, lineHeight: 1.7, color: DARK, marginBottom: 16 }}>
-          You're the final link in the cold chain — the person who puts sandwiches into the hands of the organizations that distribute them. Safe transport on your end means everything before it wasn't wasted.
-        </p>
-        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 20 }}>Before Your First Delivery</p>
+        <CalloutBox type="teal" title="You're the Final Link">
+          You put sandwiches into the hands of the organizations that distribute them. If you keep the chain intact, <strong>nothing before you was wasted.</strong>
+        </CalloutBox>
+        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 16, fontSize: 14 }}>Before Your First Delivery</p>
         <BulletList items={[
-          <><strong>Sign the Vehicle Release Form</strong> before your first delivery.</>,
-          <>Contact Jordan (Driver Coordinator) at <strong>770-789-7329</strong> if you haven't received one.</>,
+          <><strong>Sign the Vehicle Release Form.</strong></>,
+          <>Haven't received one? Contact Jordan (Driver Coordinator) at <strong>770-789-7329</strong>.</>,
         ]} />
       </div>
     ),
@@ -440,15 +442,15 @@ const DRIVER_STEPS = [
     title: "Transport Protocol",
     content: (
       <div>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginBottom: 16 }}>Pre-cool your vehicle with the A/C before loading. Then:</p>
+        <p style={{ color: BODY_COLOR, fontWeight: 600, marginBottom: 14, fontSize: 15 }}>Pre-cool your vehicle with A/C before loading. Then:</p>
         <NumberedSteps steps={[
-          <>Confirm sandwiches are pre-chilled (under 39°F). If warm, <strong>don't transport</strong> — contact the host.</>,
-          <>Check ice packs are layered between loaves and on top.</>,
-          <>Pack the cooler tightly — minimize air space.</>,
-          <>Keep cooler in the <strong>cabin, not the trunk</strong> — A/C only circulates in the cabin.</>,
-          <>Drive directly to the destination. <strong>No stops.</strong></>,
-          <>Ensure sandwiches are refrigerated immediately on arrival.</>,
-          <>Communicate any delays to the recipient organization right away.</>,
+          <><strong>Confirm cold</strong> — sandwiches under 39°F. If warm, don't transport. Call the host.</>,
+          <><strong>Ice packs</strong> layered between loaves and on top.</>,
+          <><strong>Pack tight</strong> — less air space = colder longer.</>,
+          <><strong>Cabin, not trunk.</strong> A/C doesn't reach the trunk.</>,
+          <><strong>Drive direct.</strong> No stops.</>,
+          <><strong>Refrigerate immediately</strong> on arrival.</>,
+          <><strong>Delays?</strong> Call the recipient org right away.</>,
         ]} />
       </div>
     ),
@@ -457,13 +459,13 @@ const DRIVER_STEPS = [
     title: "Critical Transport Rules",
     content: (
       <div>
-        <CalloutBox type="critical" title="Critical Transport Rules">
+        <CalloutBox type="critical" title="Don't Forget">
           <BulletList items={[
-            <><strong>Don't leave packed coolers sitting in your vehicle.</strong> Parked cars reach dangerous temperatures fast.</>,
-            <><strong>Hot cooler?</strong> Bring it inside to cool down before packing.</>,
-            <><strong>Warm sandwiches?</strong> They need to be fridge-cold first. Coolers maintain temp — they don't lower it.</>,
-            <>Keep lids sealed — every opening lets cold air escape.</>,
-            <>TSP coolers are for TSP sandwiches only.</>,
+            <><strong>Never leave packed coolers in a parked car.</strong> Temps spike fast.</>,
+            <><strong>Hot cooler?</strong> Cool it inside first.</>,
+            <><strong>Warm sandwiches?</strong> They need the fridge first. Coolers maintain — they don't chill.</>,
+            <><strong>Lids stay sealed.</strong> Every opening = cold air lost.</>,
+            <><strong>TSP coolers = TSP sandwiches only.</strong></>,
           ]} />
         </CalloutBox>
       </div>
@@ -473,15 +475,14 @@ const DRIVER_STEPS = [
     title: "Delivery & Reporting",
     content: (
       <div>
-        <CalloutBox type="teal" title="Delivery Standard">
-          <strong>We deliver exclusively to 501(c)(3) organizations</strong> — this is a legal requirement. We can't give sandwiches directly to individuals, even if they ask.
+        <CalloutBox type="teal" title="501(c)(3) Only">
+          <strong>We only deliver to nonprofit organizations.</strong> This is a legal requirement. We can't give sandwiches directly to individuals.
         </CalloutBox>
-        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 20 }}>Report Issues to Marcy</p>
-        <p style={{ color: BODY_COLOR, lineHeight: 1.65, marginBottom: 12 }}>You're our eyes and ears. If you notice any of these, call Marcy:</p>
+        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 16, fontSize: 14 }}>Report These to Marcy</p>
         <BulletList items={[
-          <><strong>Unsafe conditions:</strong> Unclean or unsanitary recipient location.</>,
-          <><strong>Improper storage:</strong> Recipient doesn't refrigerate food right away.</>,
-          <><strong>Inadequate refrigeration:</strong> Recipient lacks cooling capacity.</>,
+          <><strong>Unsafe conditions</strong> at the recipient location.</>,
+          <><strong>No immediate refrigeration</strong> on arrival.</>,
+          <><strong>Inadequate cooling capacity.</strong></>,
         ]} />
       </div>
     ),
@@ -491,8 +492,8 @@ const DRIVER_STEPS = [
     content: (
       <div>
         <FAQList items={[
-          { q: "Who do we deliver to?", a: "501(c)(3) nonprofit organizations only. This is a legal requirement — we can't distribute directly to individuals, even with good intentions." },
-          { q: "What if a recipient location looks unsanitary?", a: "Let Marcy know. Also flag if they're not refrigerating food on arrival or lack adequate cooling." },
+          { q: "Who do we deliver to?", a: "501(c)(3) nonprofits only. Legal requirement — no direct distribution to individuals." },
+          { q: "What if a recipient location looks unsanitary?", a: "Call Marcy. Also flag if they're not refrigerating on arrival or lack cooling capacity." },
         ]} />
       </div>
     ),
@@ -503,8 +504,8 @@ const CONTACTS = {
   title: "You're All Set!",
   content: (
     <div>
-      <p style={{ fontSize: 16, lineHeight: 1.7, color: DARK, marginBottom: 24 }}>
-        You've completed the volunteer walkthrough. Here's who to contact when you need help:
+      <p style={{ fontWeight: 600, fontSize: 15, color: DARK, marginBottom: 16 }}>
+        Questions? Here's who to call.
       </p>
       <div style={{ display: "flex", flexDirection: "column", gap: 0, borderRadius: 10, overflow: "hidden", border: `1px solid ${BORDER}`, marginBottom: 20 }}>
         {[
@@ -522,10 +523,10 @@ const CONTACTS = {
       <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>
         <p style={{ fontSize: 14, color: BODY_COLOR }}><strong>Website:</strong> thesandwichproject.org</p>
         <p style={{ fontSize: 14, color: BODY_COLOR }}><strong>Email:</strong> info@thesandwichproject.org</p>
-        <p style={{ fontSize: 14, color: BODY_COLOR }}><strong>Web App:</strong> www.thesandwichproject.org → "Core Team Access"</p>
+        <p style={{ fontSize: 14, color: BODY_COLOR }}><strong>Web App:</strong> thesandwichproject.org → "Core Team Access"</p>
       </div>
-      <CalloutBox type="gold" title="The Most Important Thing">
-        The Sandwich Project serves our neighbors experiencing food insecurity, with a focus on <strong>dignity, nourishment, and meeting people where they are.</strong>
+      <CalloutBox type="gold" title="Why We Do This">
+        Dignity. Nourishment. <strong>Meeting people where they are.</strong>
       </CalloutBox>
     </div>
   ),
