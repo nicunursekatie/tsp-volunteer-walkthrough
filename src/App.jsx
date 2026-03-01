@@ -57,9 +57,12 @@ const WELCOME_STEPS = [
     title: "Why Food Safety Matters",
     content: (
       <div>
-        <KeyTakeaway>We use home kitchens with multiple handoffs — so a few simple habits go a long way.</KeyTakeaway>
+        <KeyTakeaway>The people we serve may be children, elderly, or immunocompromised. They're counting on us to get this right.</KeyTakeaway>
+        <p style={{ color: BODY_COLOR, lineHeight: 1.65, fontSize: 14, marginBottom: 4 }}>
+          Our handbook puts it simply: <strong>use the same quality ingredients you'd feed your own family.</strong> That same care applies to every step — shopping, assembly, storage, and delivery.
+        </p>
         <CalloutBox type="gold" title="The Golden Rule">
-          <strong>When in doubt, throw it out.</strong><br/>A wasted sandwich is disappointing. A sandwich that makes someone sick is harmful.
+          <strong>When in doubt, throw it out.</strong><br/>Perishable food can make people sick even if it looks, smells, and tastes fine. A wasted sandwich is always better than a harmful one.
         </CalloutBox>
       </div>
     ),
