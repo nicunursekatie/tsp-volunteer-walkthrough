@@ -60,7 +60,7 @@ const WELCOME_STEPS = [
       <div>
         <KeyTakeaway>The people we serve include children, the elderly, and immunocompromised individuals. They're counting on us to get this right.</KeyTakeaway>
         <p style={{ color: BODY_COLOR, lineHeight: 1.65, fontSize: 14, marginBottom: 4 }}>
-          Our handbook puts it simply: <strong>use the same quality ingredients you'd feed your own family.</strong> That same care applies to every step — shopping, assembly, storage, and delivery.
+          <strong>Use the same quality ingredients you'd feed your own family.</strong> That same care applies to every step — shopping, assembly, storage, and delivery.
         </p>
         <CalloutBox type="gold" title="The Golden Rule">
           <strong>When in doubt, throw it out.</strong><br/>Perishable food can make people sick even if it looks, smells, and tastes fine. A wasted sandwich is always better than a harmful one.
