@@ -144,20 +144,39 @@ const FOOD_SAFETY_STEPS = [
           <><strong>Cabin, not trunk.</strong> A/C doesn't reach the trunk.</>,
           <><strong>Layer ice packs</strong> between loaves and on top.</>,
           <><strong>Pack tight.</strong> Less air = stays colder longer.</>,
-          <><strong>Keep lids sealed.</strong> Every opening lets cold air out.</>,
-          <><strong>Hot cooler?</strong> Cool it inside before packing.</>,
         ]} />
       </div>
     ),
   },
   {
-    title: "Hygiene",
+    title: "More Cooler Tips",
     content: (
       <div>
-        <KeyTakeaway>Four steps. Same order. Every single time.</KeyTakeaway>
+        <KeyTakeaway>Two more things that trip people up.</KeyTakeaway>
+        <BulletList items={[
+          <><strong>Keep lids sealed.</strong> Every opening lets cold air out.</>,
+          <><strong>Hot cooler?</strong> Bring it inside to cool down before packing. Never pack a warm cooler.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Hygiene: Steps 1 & 2",
+    content: (
+      <div>
+        <KeyTakeaway>Same order. Every single time. No shortcuts.</KeyTakeaway>
         <NumberedSteps steps={[
           <><strong>Hair first</strong> — tie back, hat, or hairnet.</>,
           <><strong>Wash hands</strong> — soap & water, 20+ seconds. Sanitizer is <em>not</em> a substitute.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Hygiene: Steps 3 & 4",
+    content: (
+      <div>
+        <NumberedSteps steps={[
           <><strong>Glove up</strong> — change if you touch your face, phone, or anything non-food.</>,
           <><strong>Clean surfaces</strong> — wipe everything food will touch. Use a disposable tablecloth.</>,
         ]} />
@@ -182,13 +201,23 @@ const FOOD_SAFETY_STEPS = [
 
 const MAKER_STEPS = [
   {
-    title: "Shopping",
+    title: "Shopping: What to Buy",
     content: (
       <div>
         <KeyTakeaway>You're the start of the cold chain. It begins at the store.</KeyTakeaway>
         <BulletList items={[
           <><strong>Prepackaged deli meat & cheese only</strong> — no deli counter slicing.</>,
           <><strong>Check dates:</strong> at least 7 days past your drop-off.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Shopping: Getting It Home",
+    content: (
+      <div>
+        <KeyTakeaway>Cold items need to stay cold from the moment you buy them.</KeyTakeaway>
+        <BulletList items={[
           <><strong>Bring a cooler with ice packs</strong> to the store for the drive home.</>,
           <><strong>Into the fridge within 30 minutes</strong> of purchase.</>,
         ]} />
@@ -221,24 +250,34 @@ const MAKER_STEPS = [
     ),
   },
   {
-    title: "PB&J Assembly",
+    title: "PB&J: The Spread",
     content: (
       <div>
-        <KeyTakeaway>Use jelly, not jam. Here's the recipe.</KeyTakeaway>
+        <KeyTakeaway>Use jelly, not jam. Here are the exact amounts.</KeyTakeaway>
         <RecipeCard title="PB&J Sandwiches" subtitle="Per sandwich">
           <NumberedSteps steps={[
             <><strong>1 tbsp peanut butter</strong> on one slice.</>,
             <><strong>2 tbsp peanut butter</strong> on the other slice.</>,
             <><strong>2 tsp jelly</strong> on top of the 2-tbsp side.</>,
-            <>Press together. <strong>Don't cut.</strong></>,
-            <>Bag individually in a zip-top bag. Press out air.</>,
           ]} />
         </RecipeCard>
       </div>
     ),
   },
   {
-    title: "Deli Sandwich Assembly",
+    title: "PB&J: Finishing Up",
+    content: (
+      <div>
+        <KeyTakeaway>Press, don't cut. Bag individually.</KeyTakeaway>
+        <BulletList items={[
+          <>Press slices together. <strong>Don't cut.</strong></>,
+          <>Bag individually in a zip-top bag. Press out air.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Deli: Building the Sandwich",
     content: (
       <div>
         <KeyTakeaway>Bread + meat + cheese. That's it. Nothing else.</KeyTakeaway>
@@ -247,9 +286,16 @@ const MAKER_STEPS = [
             <>Two slices of bread.</>,
             <><strong>Minimum 2 oz deli meat.</strong></>,
             <><strong>2 slices of cheese</strong> — one on each side.</>,
-            <><strong>Don't cut.</strong> Bag individually, press out air.</>,
           ]} />
         </RecipeCard>
+      </div>
+    ),
+  },
+  {
+    title: "Deli: No Extras",
+    content: (
+      <div>
+        <KeyTakeaway>Don't cut. Bag individually. And absolutely nothing extra.</KeyTakeaway>
         <CalloutBox type="critical" title="No Extras">
           <strong>No condiments. No vegetables. No exceptions.</strong> They speed up spoilage in our transport chain.
         </CalloutBox>
@@ -257,13 +303,24 @@ const MAKER_STEPS = [
     ),
   },
   {
-    title: "Packaging",
+    title: "Packaging: Batches",
     content: (
       <div>
-        <KeyTakeaway>Work in batches. Only one package of meat out at a time.</KeyTakeaway>
+        <KeyTakeaway>Work in batches. Only one package of meat/cheese out at a time.</KeyTakeaway>
         <BulletList items={[
           <>Bag each sandwich individually in a zip-top bag.</>,
-          <>Group into bread loaf bags — <strong>PB&J and deli separate.</strong></>,
+          <>Refrigerate the rest while you work.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Packaging: Loaf Bags",
+    content: (
+      <div>
+        <KeyTakeaway>Group sandwiches into loaf bags. Keep PB&J and deli separate.</KeyTakeaway>
+        <BulletList items={[
+          <>Group bagged sandwiches into bread loaf bags — <strong>PB&J and deli separate.</strong></>,
           <>Close loaf bags with twist ties.</>,
           <>You do <strong>not</strong> need to label — your host provides labels.</>,
         ]} />
@@ -340,7 +397,7 @@ const HOST_STEPS = [
     ),
   },
   {
-    title: "Preparing Your Space",
+    title: "Prep Your Fridge",
     content: (
       <div>
         <KeyTakeaway>Your fridge is your most important tool. Prep it before each collection.</KeyTakeaway>
@@ -348,6 +405,16 @@ const HOST_STEPS = [
           <><strong>Clean it out.</strong> Remove personal food to maximize space.</>,
           <><strong>Check temp: 34–38°F.</strong> Don't assume — verify.</>,
           <><strong>Leave room for airflow.</strong> Overpacked = warm spots.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Prep Your Space",
+    content: (
+      <div>
+        <KeyTakeaway>Keep the area around your fridge clean and safe.</KeyTakeaway>
+        <BulletList items={[
           <><strong>Keep the area clean.</strong> No strong odors, no clutter.</>,
           <><strong>Off the floor.</strong> Away from pets, trash, chemicals.</>,
         ]} />
@@ -368,15 +435,26 @@ const HOST_STEPS = [
     ),
   },
   {
-    title: "Collection Day: Receiving",
+    title: "Receiving: Sign-In",
     content: (
       <div>
-        <KeyTakeaway>Greet warmly, check quality, get sandwiches cold fast.</KeyTakeaway>
+        <KeyTakeaway>Greet warmly — it keeps makers coming back.</KeyTakeaway>
         <BulletList items={[
-          <><strong>Greet warmly</strong> — it keeps makers coming back.</>,
           <>Sign in + record sandwich count & contact info.</>,
-          <>Have them label with host-provided labels.</>,
-          <><strong>Quick check:</strong> Sealed? Labeled? Cold to the touch?</>,
+          <>Have them label sandwiches with host-provided labels.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Receiving: Quality Check",
+    content: (
+      <div>
+        <KeyTakeaway>Every sandwich gets a quick check before it goes in the fridge.</KeyTakeaway>
+        <BulletList items={[
+          <><strong>Sealed?</strong> Bags closed, no tears.</>,
+          <><strong>Labeled?</strong> Correct label applied.</>,
+          <><strong>Cold to the touch?</strong> Must feel fridge-cold.</>,
           <>Made no earlier than <strong>Tuesday evening.</strong></>,
         ]} />
       </div>
@@ -398,31 +476,51 @@ const HOST_STEPS = [
     ),
   },
   {
-    title: "Thursday: Delivery Prep",
+    title: "Thursday: Packing Coolers",
     content: (
       <div>
         <KeyTakeaway>Pack coolers for your driver. This is a critical handoff.</KeyTakeaway>
         <BulletList items={[
-          <><strong>Hot cooler?</strong> Bring it inside to cool first. Never pack a warm cooler.</>,
+          <><strong>Hot cooler?</strong> Cool it inside first. Never pack a warm cooler.</>,
           <><strong>Confirm under 39°F</strong> before packing.</>,
-          <><strong>Ice packs:</strong> layer between loaves and on top. Every loaf touches ice.</>,
+          <><strong>Ice packs:</strong> layer between loaves and on top.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Thursday: Final Check",
+    content: (
+      <div>
+        <KeyTakeaway>Quick checklist before the driver arrives.</KeyTakeaway>
+        <BulletList items={[
           <><strong>Pack tight</strong> — less air = stays colder.</>,
           <>Work in shade. Keep lids closed between loads.</>,
         ]} />
-        <CalloutBox type="teal" title="Quick Check Before Handoff">
+        <CalloutBox type="teal" title="Before Handoff">
           Sealed? Labeled? Cold to the touch? Loaf bags closed with twist ties?
         </CalloutBox>
       </div>
     ),
   },
   {
-    title: "Handling Quality Issues",
+    title: "Quality Issues: Fixable",
     content: (
       <div>
-        <KeyTakeaway>It happens. Handle it gracefully — food safety always wins.</KeyTakeaway>
+        <KeyTakeaway>Some issues are easy fixes. Handle it gracefully.</KeyTakeaway>
         <BulletList items={[
           <><strong>Torn bags &rarr;</strong> transfer to a new bag if wrappers are intact.</>,
           <><strong>Missing labels &rarr;</strong> ask them to label. Confirm made within 24 hours.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Quality Issues: Not Fixable",
+    content: (
+      <div>
+        <KeyTakeaway>Some sandwiches can't be accepted. Food safety always wins.</KeyTakeaway>
+        <BulletList items={[
           <><strong>Warm / spoiled / messy &rarr;</strong> can't accept. "We can only take sandwiches that are cold to the touch."</>,
         ]} />
         <CalloutBox type="teal" title="If Sandwiches Seem Unsafe">
@@ -432,23 +530,29 @@ const HOST_STEPS = [
     ),
   },
   {
-    title: "Cleaning & Schedules",
+    title: "Cleaning: Fridge & Coolers",
     content: (
       <div>
-        <KeyTakeaway>Keep it clean, keep it organized, and let your team know your schedule.</KeyTakeaway>
+        <KeyTakeaway>Clean equipment = safe sandwiches.</KeyTakeaway>
         <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, fontSize: 14 }}>Fridge</p>
         <BulletList items={[
           <>Wipe down regularly. Keep personal food separate.</>,
-          <>Minimize door-open time.</>,
         ]} />
         <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 16, fontSize: 14 }}>Coolers</p>
         <BulletList items={[
           <>Soap + warm water after each use. Air-dry fully.</>,
-          <><strong>TSP coolers = TSP sandwiches only.</strong> No raw meat, fish, etc.</>,
+          <><strong>TSP coolers = TSP sandwiches only.</strong></>,
         ]} />
-        <p style={{ fontWeight: 700, color: DARK, marginBottom: 10, marginTop: 16, fontSize: 14 }}>Monthly Schedules</p>
+      </div>
+    ),
+  },
+  {
+    title: "Monthly Schedules",
+    content: (
+      <div>
+        <KeyTakeaway>Let your team know when you're unavailable.</KeyTakeaway>
         <p style={{ color: BODY_COLOR, lineHeight: 1.65, fontSize: 14 }}>
-          A team member sends a Google Form monthly for unavailable weeks. Remind your makers to subscribe to the weekly newsletter.
+          A team member sends a Google Form monthly. Fill it out so your team can plan around absences. Remind your makers to subscribe to the weekly newsletter.
         </p>
       </div>
     ),
@@ -480,13 +584,23 @@ const DRIVER_STEPS = [
     ),
   },
   {
-    title: "Loading Up",
+    title: "Before Loading",
     content: (
       <div>
-        <KeyTakeaway>Pre-cool your car. Confirm everything is cold before it goes in the cooler.</KeyTakeaway>
-        <NumberedSteps steps={[
-          <><strong>Pre-cool your vehicle</strong> — run the A/C before loading.</>,
+        <KeyTakeaway>Pre-cool your car. Confirm everything is cold before it goes in.</KeyTakeaway>
+        <BulletList items={[
+          <><strong>Run the A/C</strong> before loading anything.</>,
           <><strong>Confirm cold</strong> — sandwiches must be under 39°F. If warm, don't transport. Call the host.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Packing the Cooler",
+    content: (
+      <div>
+        <KeyTakeaway>Ice packs everywhere. Pack it tight.</KeyTakeaway>
+        <BulletList items={[
           <><strong>Layer ice packs</strong> between loaves and on top.</>,
           <><strong>Pack tight</strong> — less air space = colder longer.</>,
         ]} />
@@ -498,9 +612,19 @@ const DRIVER_STEPS = [
     content: (
       <div>
         <KeyTakeaway>Cabin, not trunk. Drive direct. No stops.</KeyTakeaway>
-        <NumberedSteps steps={[
+        <BulletList items={[
           <><strong>Cabin, not trunk.</strong> A/C doesn't reach the trunk.</>,
           <><strong>Drive direct.</strong> No stops, no errands.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "On Arrival",
+    content: (
+      <div>
+        <KeyTakeaway>Get sandwiches into a fridge immediately.</KeyTakeaway>
+        <BulletList items={[
           <><strong>Refrigerate immediately</strong> when you arrive.</>,
           <><strong>Running late?</strong> Call the recipient org right away.</>,
         ]} />
@@ -508,17 +632,15 @@ const DRIVER_STEPS = [
     ),
   },
   {
-    title: "Critical Rules",
+    title: "Mistakes to Avoid",
     content: (
       <div>
         <KeyTakeaway>These are the mistakes that can ruin a whole batch.</KeyTakeaway>
         <CalloutBox type="critical" title="Don't Forget">
           <BulletList items={[
             <><strong>Never leave coolers in a parked car.</strong> Temps spike fast.</>,
-            <><strong>Hot cooler?</strong> Cool it inside first.</>,
             <><strong>Warm sandwiches?</strong> Fridge first — coolers maintain, don't chill.</>,
             <><strong>Lids stay sealed.</strong> Every opening = cold air lost.</>,
-            <><strong>TSP coolers = TSP sandwiches only.</strong></>,
           ]} />
         </CalloutBox>
       </div>
