@@ -57,7 +57,7 @@ const WELCOME_STEPS = [
     title: "Why Food Safety Matters",
     content: (
       <div>
-        <KeyTakeaway>The people we serve may be children, elderly, or immunocompromised. They're counting on us to get this right.</KeyTakeaway>
+        <KeyTakeaway>The people we serve are children, elderly, and immunocompromised. They're counting on us to get this right.</KeyTakeaway>
         <p style={{ color: BODY_COLOR, lineHeight: 1.65, fontSize: 14, marginBottom: 4 }}>
           Our handbook puts it simply: <strong>use the same quality ingredients you'd feed your own family.</strong> That same care applies to every step — shopping, assembly, storage, and delivery.
         </p>
@@ -84,7 +84,7 @@ const FOOD_SAFETY_STEPS = [
     title: "Three Numbers to Know",
     content: (
       <div>
-        <KeyTakeaway>These three temperatures tell you if food is safe.</KeyTakeaway>
+        <KeyTakeaway>Three key temperature thresholds to keep in mind.</KeyTakeaway>
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <div style={{ background: TEAL_WASH, borderRadius: 10, padding: "16px 20px", display: "flex", alignItems: "center", gap: 14, border: `1px solid ${TEAL}33` }}>
             <div style={{ fontSize: 28, fontWeight: 800, color: TEAL, fontFamily: "Georgia, serif", minWidth: 90 }}>34–38°F</div>
@@ -96,8 +96,8 @@ const FOOD_SAFETY_STEPS = [
           <div style={{ background: GOLD_LIGHT, borderRadius: 10, padding: "16px 20px", display: "flex", alignItems: "center", gap: 14, border: `1px solid ${GOLD}33` }}>
             <div style={{ fontSize: 28, fontWeight: 800, color: GOLD_DARK, fontFamily: "Georgia, serif", minWidth: 90 }}>39°F</div>
             <div>
-              <div style={{ fontWeight: 700, color: GOLD_DARK, fontSize: 12, textTransform: "uppercase", letterSpacing: 0.5 }}>Max Safe</div>
-              <div style={{ color: BODY_COLOR, fontSize: 14 }}>Absolute ceiling for meat & cheese</div>
+              <div style={{ fontWeight: 700, color: GOLD_DARK, fontSize: 12, textTransform: "uppercase", letterSpacing: 0.5 }}>Caution</div>
+              <div style={{ color: BODY_COLOR, fontSize: 14 }}>Above this, the 2-hour clock starts</div>
             </div>
           </div>
           <div style={{ background: RED_LIGHT, borderRadius: 10, padding: "16px 20px", display: "flex", alignItems: "center", gap: 14, border: `1px solid ${RED}33` }}>
@@ -987,8 +987,8 @@ export default function App() {
       </div>
 
       {/* Content */}
-      <div ref={contentRef} style={{ flex: 1, overflow: "auto", padding: "24px 20px 120px" }}>
-        <div style={{ maxWidth: 600, margin: "0 auto" }}>
+      <div ref={contentRef} style={{ flex: 1, overflow: "auto", padding: "24px 20px 40px" }}>
+        <div style={{ maxWidth: 720, margin: "0 auto" }}>
           {/* Overall Progress */}
           <ProgressBar current={progress.current} total={progress.total} label={getPhaseLabel()} />
 
@@ -1007,41 +1007,41 @@ export default function App() {
           </div>
 
           {/* Card */}
-          <div style={{ background: "white", borderRadius: 14, padding: "28px 24px", boxShadow: `0 2px 12px ${TEAL}0A`, border: `1px solid ${BORDER}` }}>
-            <h2 style={{ fontFamily: "Georgia, serif", fontSize: 22, fontWeight: 700, color: TEAL_DARK, marginBottom: 20, letterSpacing: -0.3 }}>
+          <div style={{ background: "white", borderRadius: 14, padding: "36px 32px", boxShadow: `0 2px 12px ${TEAL}0A`, border: `1px solid ${BORDER}` }}>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: 24, fontWeight: 700, color: TEAL_DARK, marginBottom: 22, letterSpacing: -0.3 }}>
               {currentStep.title}
             </h2>
             {currentStep.content}
           </div>
-        </div>
-      </div>
 
-      {/* Navigation */}
-      <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, background: "white", borderTop: `1px solid ${BORDER}`, padding: "14px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 10 }}>
-        <button
-          onClick={prev}
-          disabled={!canGoPrev}
-          style={{ background: "none", border: `1px solid ${canGoPrev ? BORDER : "transparent"}`, borderRadius: 8, padding: "10px 20px", fontSize: 14, fontWeight: 600, color: canGoPrev ? BODY_COLOR : "transparent", cursor: canGoPrev ? "pointer" : "default" }}
-        >
-          &larr; Back
-        </button>
-        {isContacts ? (
-          <button
-            onClick={() => setPhase(PHASES.complete)}
-            style={{ background: GOLD, color: "white", border: "none", borderRadius: 8, padding: "10px 28px", fontSize: 14, fontWeight: 700, cursor: "pointer" }}
-          >
-            Complete &#10003;
-          </button>
-        ) : (
-          <button
-            onClick={next}
-            style={{ background: TEAL, color: "white", border: "none", borderRadius: 8, padding: "10px 28px", fontSize: 14, fontWeight: 600, cursor: "pointer", boxShadow: `0 2px 8px ${TEAL}33` }}
-            onMouseEnter={e => e.target.style.background = TEAL_DARK}
-            onMouseLeave={e => e.target.style.background = TEAL}
-          >
-            Continue &rarr;
-          </button>
-        )}
+          {/* Navigation */}
+          <div style={{ marginTop: 16, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <button
+              onClick={prev}
+              disabled={!canGoPrev}
+              style={{ background: "none", border: `1px solid ${canGoPrev ? BORDER : "transparent"}`, borderRadius: 8, padding: "10px 20px", fontSize: 14, fontWeight: 600, color: canGoPrev ? BODY_COLOR : "transparent", cursor: canGoPrev ? "pointer" : "default" }}
+            >
+              &larr; Back
+            </button>
+            {isContacts ? (
+              <button
+                onClick={() => setPhase(PHASES.complete)}
+                style={{ background: GOLD, color: "white", border: "none", borderRadius: 8, padding: "10px 28px", fontSize: 14, fontWeight: 700, cursor: "pointer" }}
+              >
+                Complete &#10003;
+              </button>
+            ) : (
+              <button
+                onClick={next}
+                style={{ background: TEAL, color: "white", border: "none", borderRadius: 8, padding: "10px 28px", fontSize: 14, fontWeight: 600, cursor: "pointer", boxShadow: `0 2px 8px ${TEAL}33` }}
+                onMouseEnter={e => e.target.style.background = TEAL_DARK}
+                onMouseLeave={e => e.target.style.background = TEAL}
+              >
+                Continue &rarr;
+              </button>
+            )}
+          </div>
+        </div>
       </div>
 
       {/* Complete overlay */}
