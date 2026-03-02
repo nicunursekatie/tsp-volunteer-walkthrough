@@ -185,8 +185,8 @@ const MAKER_STEPS = [
       <div>
         <KeyTakeaway>The cold chain starts at the store. Here's what to grab.</KeyTakeaway>
         <BulletList items={[
-          <><strong>Prepackaged deli meat & cheese only</strong> — no deli counter slicing.</>,
-          <><strong>Check dates:</strong> at least 7 days past your drop-off.</>,
+          <><strong>Prepackaged deli meat & cheese only</strong> — nothing sliced at the deli counter.</>,
+          <><strong>Check dates:</strong>expiration must be at least 7 days past your drop-off date. Try to buy the latest expiration date you can find.</>,
           <><strong>Grab meat and cheese last</strong> — right before checkout.</>,
         ]} />
       </div>
@@ -199,7 +199,7 @@ const MAKER_STEPS = [
         <KeyTakeaway>Cold items need to stay cold from the moment you buy them.</KeyTakeaway>
         <BulletList items={[
           <><strong>Bring a cooler with ice packs</strong> to the store for the drive home.</>,
-          <><strong>Into the fridge immediately</strong> when you get home.</>,
+          <><strong>Move the meat and cheese to the fridge immediately</strong> when you get home.</>,
         ]} />
       </div>
     ),
@@ -210,7 +210,7 @@ const MAKER_STEPS = [
       <div>
         <KeyTakeaway>Quick reference for how long things last.</KeyTakeaway>
         <InfoGrid rows={[
-          ["Opened deli meat", "Use within 3 days"],
+          ["Opened deli meat", "Use within 24 hours"],
           ["Unopened deli meat & cheese", "Within 2 weeks of purchase"],
           ["Bread", "Room temp — check for mold"],
           ["Peanut butter & jelly", "Shelf-stable — check expiration"],
