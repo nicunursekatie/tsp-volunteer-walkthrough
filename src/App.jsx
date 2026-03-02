@@ -62,7 +62,7 @@ const WELCOME_STEPS = [
           Every step matters — from what you buy to how you store and deliver it. <strong>The ingredients you use and the sandwiches you make should be the same quality you would feed yourself and your own family.</strong>
         </p>
         <CalloutBox type="gold" title="The Golden Rule">
-          <strong>When in doubt, throw it out.</strong><br/>Perishable food can make people sick even if it looks, smells, and tastes fine. A wasted sandwich is always better than a harmful one.
+          <strong>When in doubt, throw it out.</strong><br/>Perishable food can make people sick even if it looks, smells, and tastes fine. 
         </CalloutBox>
       </div>
     ),
