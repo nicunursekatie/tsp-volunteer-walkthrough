@@ -75,7 +75,8 @@ const FOOD_SAFETY_STEPS = [
     content: (
       <div>
         <KeyTakeaway>The cold chain is how we keep sandwiches safe from store to delivery — 9 steps, one goal.</KeyTakeaway>
-        <img src={coldChainMaker} alt="The Sandwich Project Cold Chain: 9 steps from store to recipient" style={{ width: "100%", borderRadius: 10, marginBottom: 16 }} />
+        <img src={coldChainMaker} alt="The Sandwich Project Cold Chain: 9 steps from store to recipient" style={{ width: "80%", display: "block", margin: "0 auto 20px", borderRadius: 10, opacity: 0.92 }} />
+        <div style={{ fontSize: 12, fontWeight: 700, color: TEAL, textTransform: "uppercase", letterSpacing: 1, marginBottom: 10 }}>Steps 1–3: Shopping &amp; Storage</div>
         <NumberedSteps steps={[
           <><strong>Store purchase.</strong> Grab meat and cheese last, right before checkout — don't let them sit in your cart while you shop for other items.</>,
           <><strong>Car with cooler + ice packs.</strong> Bring a cooler with ice packs to the store. Put the meat and cheese straight in on your way home.</>,
@@ -89,7 +90,8 @@ const FOOD_SAFETY_STEPS = [
     content: (
       <div>
         <KeyTakeaway>Assembly is where most warm time happens — keep it quick.</KeyTakeaway>
-        <img src={coldChainMaker} alt="The Sandwich Project Cold Chain: 9 steps from store to recipient" style={{ width: "100%", borderRadius: 10, marginBottom: 16 }} />
+        <img src={coldChainMaker} alt="The Sandwich Project Cold Chain: 9 steps from store to recipient" style={{ width: "80%", display: "block", margin: "0 auto 20px", borderRadius: 10, opacity: 0.92 }} />
+        <div style={{ fontSize: 12, fontWeight: 700, color: TEAL, textTransform: "uppercase", letterSpacing: 1, marginBottom: 10 }}>Steps 4–6: Assembly &amp; Delivery Prep</div>
         <NumberedSteps start={4} steps={[
           <><strong>Quick prep.</strong> Only take out as much meat and cheese as you need for one loaf of sandwiches at a time. Take it out right before you assemble.</>,
           <><strong>Assembled back to fridge.</strong> After bagging sandwiches and putting them back in the loaf bag with a twist tie, place the loaf back in the fridge. Let them cool at least 30 minutes before going into a cooler for delivery.</>,
@@ -103,7 +105,8 @@ const FOOD_SAFETY_STEPS = [
     content: (
       <div>
         <KeyTakeaway>The final handoffs — your part ends at the host's fridge.</KeyTakeaway>
-        <img src={coldChainMaker} alt="The Sandwich Project Cold Chain: 9 steps from store to recipient" style={{ width: "100%", borderRadius: 10, marginBottom: 16 }} />
+        <img src={coldChainMaker} alt="The Sandwich Project Cold Chain: 9 steps from store to recipient" style={{ width: "80%", display: "block", margin: "0 auto 20px", borderRadius: 10, opacity: 0.92 }} />
+        <div style={{ fontSize: 12, fontWeight: 700, color: TEAL, textTransform: "uppercase", letterSpacing: 1, marginBottom: 10 }}>Steps 7–9: Handoff &amp; Delivery</div>
         <NumberedSteps start={7} steps={[
           <><strong>Host home fridge.</strong> Drive straight to your host. Sign in, apply TSP-provided labels to your loaves, and get them into the host's fridge quickly.</>,
           <><strong>Cool cooler to driver's car.</strong> After that, it's out of your hands! The host keeps the fridge door shut as much as possible until the driver arrives, then packs the loaves into another cooler with ice packs.</>,
@@ -780,11 +783,11 @@ function BulletList({ items }) {
 
 function NumberedSteps({ steps, start = 1 }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
       {steps.map((step, i) => (
-        <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start", background: LIGHT, borderRadius: 8, padding: "12px 14px", borderLeft: `3px solid ${TEAL_LIGHT}` }}>
-          <div style={{ width: 26, height: 26, borderRadius: "50%", background: TEAL, color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, flexShrink: 0, marginTop: 1 }}>{start + i}</div>
-          <div style={{ color: BODY_COLOR, fontSize: 14, lineHeight: 1.6 }}>{step}</div>
+        <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start", background: "white", borderRadius: 10, padding: "16px 18px", border: `1.5px solid ${TEAL}33`, boxShadow: `0 1px 4px ${TEAL}0A` }}>
+          <div style={{ width: 32, height: 32, borderRadius: "50%", background: TEAL, color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 700, flexShrink: 0, marginTop: 1 }}>{start + i}</div>
+          <div style={{ color: BODY_COLOR, fontSize: 15, lineHeight: 1.65 }}>{step}</div>
         </div>
       ))}
     </div>
