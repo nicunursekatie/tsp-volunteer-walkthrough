@@ -167,9 +167,9 @@ const FOOD_SAFETY_STEPS = [
       <div>
         <KeyTakeaway>A few easy habits keep your fridge working effectively and your ingredients and sandwiches safe.</KeyTakeaway>
         <BulletList items={[
-          <><strong>Don't overfill.</strong> Overpacked fridge = warm spots, even if the thermometer reads fine.</>,
+          <><strong>Don't overfill.</strong> Overpacked fridge blocks air flow creating warm spots, even if the thermometer reads fine.</>,
           <><strong>Minimize door openings.</strong> Cold air escapes fast. In and out quickly.</>,
-          <><strong>Hot weather trick:</strong> Sealed bags in the freezer for 15–20 min, then move to the fridge.</>,
+          <><strong>Last minute trick:</strong> If you need to deliver your sandwiches soon, place twist tied loaf bags in the freezer for 10-15 minutes to get them cold before moving them to the cooler.</>,
         ]} />
       </div>
     ),
@@ -180,9 +180,9 @@ const FOOD_SAFETY_STEPS = [
       <div>
         <KeyTakeaway>Coolers maintain cold — they don't create it. Only pack food that's already fridge-cold.</KeyTakeaway>
         <BulletList items={[
-          <><strong>Cabin, not trunk.</strong> A/C doesn't reach the trunk.</>,
-          <><strong>Layer ice packs</strong> between loaves and on top.</>,
-          <><strong>Pack tight.</strong> Less air = stays colder longer.</>,
+          <><strong>Put coolers in your vehicle cabin where the A/C can circulate, not the trunk.</strong> A/C doesn't reach the trunk.</>,
+          <><strong>Layer ice packs</strong> between loaves and at the sides of the cooler so all loaves are in contact with them.</>,
+          <><strong>Pack tight.</strong> Less air in a cooler makes it more effective at insulation.</>,
         ]} />
       </div>
     ),
@@ -191,9 +191,9 @@ const FOOD_SAFETY_STEPS = [
     title: "More Cooler Tips",
     content: (
       <div>
-        <KeyTakeaway>Two more things that trip people up.</KeyTakeaway>
+        <KeyTakeaway>Two more things that trip will ensure your sandwiches are safe and chilly.</KeyTakeaway>
         <BulletList items={[
-          <><strong>Keep lids sealed.</strong> Every opening lets cold air out.</>,
+          <><strong>Keep lids sealed.</strong> Every opening lets cold air out and warm air in.</>,
           <><strong>Hot cooler?</strong> Bring it inside to cool down before packing. Never pack a warm cooler.</>,
         ]} />
       </div>
