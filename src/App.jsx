@@ -71,20 +71,11 @@ const WELCOME_STEPS = [
 
 const FOOD_SAFETY_STEPS = [
   {
-    title: "The Cold Chain",
+    title: "The Cold Chain: Steps 1–3",
     content: (
       <div>
-        <KeyTakeaway>The cold chain is how we keep sandwiches safe from store to delivery. Here's every step.</KeyTakeaway>
-        <img src={coldChainMaker} alt="The Sandwich Project Cold Chain: 1. Store purchase, 2. Car with cooler + ice packs, 3. Volunteer's home fridge, 4. Quick prep (only required packages), 5. Assembled back to fridge, 6. Refrigerated to cool cooler in car, 7. Host home fridge, 8. Cool cooler to driver's car, 9. Recipient's refrigerator" style={{ width: "100%", borderRadius: 10, marginBottom: 12 }} />
-        <p style={{ color: MUTED, fontSize: 13, fontStyle: "italic", textAlign: "center" }}>9 steps, one goal: keep it cold from store to table.</p>
-      </div>
-    ),
-  },
-  {
-    title: "Cold Chain: Steps 1–3",
-    content: (
-      <div>
-        <KeyTakeaway>The cold chain starts before you even leave the store.</KeyTakeaway>
+        <KeyTakeaway>The cold chain is how we keep sandwiches safe from store to delivery — 9 steps, one goal.</KeyTakeaway>
+        <img src={coldChainMaker} alt="The Sandwich Project Cold Chain: 9 steps from store to recipient" style={{ width: "100%", borderRadius: 10, marginBottom: 16 }} />
         <NumberedSteps steps={[
           <><strong>Store purchase.</strong> Grab meat and cheese last, right before checkout — don't let them sit in your cart while you shop for other items.</>,
           <><strong>Car with cooler + ice packs.</strong> Bring a cooler with ice packs to the store. Put the meat and cheese straight in on your way home.</>,
@@ -94,10 +85,11 @@ const FOOD_SAFETY_STEPS = [
     ),
   },
   {
-    title: "Cold Chain: Steps 4–6",
+    title: "The Cold Chain: Steps 4–6",
     content: (
       <div>
         <KeyTakeaway>Assembly is where most warm time happens — keep it quick.</KeyTakeaway>
+        <img src={coldChainMaker} alt="The Sandwich Project Cold Chain: 9 steps from store to recipient" style={{ width: "100%", borderRadius: 10, marginBottom: 16 }} />
         <NumberedSteps steps={[
           <><strong>Quick prep.</strong> Only take out as much meat and cheese as you need for one loaf of sandwiches at a time. Take it out right before you assemble.</>,
           <><strong>Assembled back to fridge.</strong> After bagging sandwiches and putting them back in the loaf bag with a twist tie, place the loaf back in the fridge. Let them cool at least 30 minutes before going into a cooler for delivery.</>,
@@ -107,10 +99,11 @@ const FOOD_SAFETY_STEPS = [
     ),
   },
   {
-    title: "Cold Chain: Steps 7–9",
+    title: "The Cold Chain: Steps 7–9",
     content: (
       <div>
         <KeyTakeaway>The final handoffs — your part ends at the host's fridge.</KeyTakeaway>
+        <img src={coldChainMaker} alt="The Sandwich Project Cold Chain: 9 steps from store to recipient" style={{ width: "100%", borderRadius: 10, marginBottom: 16 }} />
         <NumberedSteps steps={[
           <><strong>Host home fridge.</strong> Drive straight to your host. Sign in, apply TSP-provided labels to your loaves, and get them into the host's fridge quickly.</>,
           <><strong>Cool cooler to driver's car.</strong> After that, it's out of your hands! The host keeps the fridge door shut as much as possible until the driver arrives, then packs the loaves into another cooler with ice packs.</>,
