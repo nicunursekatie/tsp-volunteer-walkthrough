@@ -90,7 +90,7 @@ const FOOD_SAFETY_STEPS = [
       <div>
         <KeyTakeaway>Assembly is where most warm time happens — keep it quick.</KeyTakeaway>
         <img src={coldChainMaker} alt="The Sandwich Project Cold Chain: 9 steps from store to recipient" style={{ width: "100%", borderRadius: 10, marginBottom: 16 }} />
-        <NumberedSteps steps={[
+        <NumberedSteps start={4} steps={[
           <><strong>Quick prep.</strong> Only take out as much meat and cheese as you need for one loaf of sandwiches at a time. Take it out right before you assemble.</>,
           <><strong>Assembled back to fridge.</strong> After bagging sandwiches and putting them back in the loaf bag with a twist tie, place the loaf back in the fridge. Let them cool at least 30 minutes before going into a cooler for delivery.</>,
           <><strong>Refrigerated to cool cooler in car.</strong> When it's time to deliver, move loaves from the fridge straight into a cooler with ice packs in your car. Make sure the cooler isn't hot from sitting outside or in a warm garage.</>,
@@ -104,7 +104,7 @@ const FOOD_SAFETY_STEPS = [
       <div>
         <KeyTakeaway>The final handoffs — your part ends at the host's fridge.</KeyTakeaway>
         <img src={coldChainMaker} alt="The Sandwich Project Cold Chain: 9 steps from store to recipient" style={{ width: "100%", borderRadius: 10, marginBottom: 16 }} />
-        <NumberedSteps steps={[
+        <NumberedSteps start={7} steps={[
           <><strong>Host home fridge.</strong> Drive straight to your host. Sign in, apply TSP-provided labels to your loaves, and get them into the host's fridge quickly.</>,
           <><strong>Cool cooler to driver's car.</strong> After that, it's out of your hands! The host keeps the fridge door shut as much as possible until the driver arrives, then packs the loaves into another cooler with ice packs.</>,
           <><strong>Recipient's refrigerator.</strong> The driver heads straight to the recipient organization, who transfers sandwiches into their own refrigerator immediately.</>,
@@ -778,12 +778,12 @@ function BulletList({ items }) {
   );
 }
 
-function NumberedSteps({ steps }) {
+function NumberedSteps({ steps, start = 1 }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
       {steps.map((step, i) => (
         <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start", background: LIGHT, borderRadius: 8, padding: "12px 14px", borderLeft: `3px solid ${TEAL_LIGHT}` }}>
-          <div style={{ width: 26, height: 26, borderRadius: "50%", background: TEAL, color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, flexShrink: 0, marginTop: 1 }}>{i + 1}</div>
+          <div style={{ width: 26, height: 26, borderRadius: "50%", background: TEAL, color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, flexShrink: 0, marginTop: 1 }}>{start + i}</div>
           <div style={{ color: BODY_COLOR, fontSize: 14, lineHeight: 1.6 }}>{step}</div>
         </div>
       ))}
