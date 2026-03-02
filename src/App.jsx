@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import coldChainDiagram from "./assets/cold-chain-diagram.jpg";
 import coldChainMaker from "./assets/cold-chain-maker.jpeg";
 import tspLogo from "./assets/tsp-logo.png";
 
@@ -60,7 +59,7 @@ const WELCOME_STEPS = [
       <div>
         <KeyTakeaway>The people we serve include children, the elderly, and immunocompromised individuals. They're counting on us to get this right.</KeyTakeaway>
         <p style={{ color: BODY_COLOR, lineHeight: 1.65, fontSize: 14, marginBottom: 4 }}>
-          Every step matters — from what you buy to how you store and deliver it. <strong>If you wouldn't feed it to your own family, don't send it to ours.</strong>
+          Every step matters — from what you buy to how you store and deliver it. <strong>The ingredients you use and the sandwiches you make should be the same quality you would feed yourself and your own family.</strong>
         </p>
         <CalloutBox type="gold" title="The Golden Rule">
           <strong>When in doubt, throw it out.</strong><br/>Perishable food can make people sick even if it looks, smells, and tastes fine. A wasted sandwich is always better than a harmful one.
@@ -1029,7 +1028,7 @@ export default function App() {
 
       {/* Content */}
       <div ref={contentRef} style={{ flex: 1, overflow: "auto", padding: "24px 20px 40px" }}>
-        <div style={{ maxWidth: 720, margin: "0 auto" }}>
+        <div style={{ maxWidth: 860, margin: "0 auto" }}>
           {/* Overall Progress */}
           <ProgressBar current={progress.current} total={progress.total} label={getPhaseLabel()} />
 
@@ -1048,8 +1047,8 @@ export default function App() {
           </div>
 
           {/* Card */}
-          <div style={{ background: "white", borderRadius: 14, padding: "36px 32px", boxShadow: `0 2px 12px ${TEAL}0A`, border: `1px solid ${BORDER}` }}>
-            <h2 style={{ fontFamily: "Georgia, serif", fontSize: 24, fontWeight: 700, color: TEAL_DARK, marginBottom: 22, letterSpacing: -0.3 }}>
+          <div style={{ background: "white", borderRadius: 14, padding: "44px 40px", boxShadow: `0 2px 12px ${TEAL}0A`, border: `1px solid ${BORDER}` }}>
+            <h2 style={{ fontFamily: "Georgia, serif", fontSize: 26, fontWeight: 700, color: TEAL_DARK, marginBottom: 24, letterSpacing: -0.3 }}>
               {currentStep.title}
             </h2>
             {currentStep.content}
