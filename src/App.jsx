@@ -180,14 +180,31 @@ const FOOD_SAFETY_STEPS = [
 const MAKER_STEPS = [
   // ── Shopping ──
   {
-    title: "Shopping: What to Buy",
+    title: "Shopping: Deli Ingredients",
     content: (
       <div>
-        <KeyTakeaway>The cold chain starts at the store. Here's what to grab.</KeyTakeaway>
+        <KeyTakeaway>Three ingredients: bread, deli meat, and American cheese. Here's exactly what to buy.</KeyTakeaway>
         <BulletList items={[
-          <><strong>Prepackaged deli meat & cheese only</strong> — nothing sliced at the deli counter.</>,
-          <><strong>Check dates:</strong>expiration must be at least 7 days past your drop-off date. Try to buy the latest expiration date you can find.</>,
+          <><strong>Deli meat:</strong> Prepackaged sliced turkey or chicken only — nothing sliced at the deli counter.</>,
+          <><strong>Cheese:</strong> Prepackaged sliced American cheese. Not individually wrapped Kraft singles — those aren't real cheese. They aren't as nutritious and they turn to mush on the sandwich before it can be eaten.</>,
+          <><strong>Bread:</strong> Any standard sliced sandwich bread.</>,
+        ]} />
+        <BulletList items={[
+          <><strong>Check dates:</strong> expiration must be at least 7 days past your drop-off date. Try to buy the latest expiration date you can find.</>,
           <><strong>Grab meat and cheese last</strong> — right before checkout.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Shopping: PB&J Ingredients",
+    content: (
+      <div>
+        <KeyTakeaway>Specific types matter — here's what we need.</KeyTakeaway>
+        <BulletList items={[
+          <><strong>Peanut butter:</strong> Smooth only. Not crunchy, not light, not reduced fat.</>,
+          <><strong>Jelly:</strong> Strawberry or grape. Must be <strong>jelly</strong> — not jam, not preserves, not fruit spread.</>,
+          <><strong>Bread:</strong> Any standard sliced sandwich bread.</>,
         ]} />
       </div>
     ),
@@ -249,52 +266,81 @@ const MAKER_STEPS = [
     ),
   },
   {
-    title: "PB&J: The Spread",
+    title: "Deli: Building the Sandwich",
     content: (
       <div>
-        <KeyTakeaway>Use jelly, not jam. Here are the exact amounts.</KeyTakeaway>
-        <RecipeCard title="PB&J Sandwiches" subtitle="Per sandwich">
+        <KeyTakeaway>The layer order matters — cheese protects the bread from the moisture of the meat.</KeyTakeaway>
+        <RecipeCard title="Deli Sandwich" subtitle="Layer order, bottom to top">
           <NumberedSteps steps={[
-            <><strong>1 tbsp peanut butter</strong> on one slice.</>,
-            <><strong>2 tbsp peanut butter</strong> on the other slice.</>,
-            <><strong>2 tsp jelly</strong> on top of the 2-tbsp side.</>,
+            <>Bread</>,
+            <>Cheese (1 slice)</>,
+            <><strong>Minimum 2 oz deli meat</strong></>,
+            <>Cheese (1 slice)</>,
+            <>Bread</>,
           ]} />
         </RecipeCard>
-        <BulletList items={[
-          <>Press slices together. <strong>Don't cut.</strong></>,
-          <>Bag individually in a zip-top bag. Press out air.</>,
-        ]} />
       </div>
     ),
   },
   {
-    title: "Deli: Building the Sandwich",
+    title: "Deli: How Much Meat?",
     content: (
       <div>
-        <KeyTakeaway>Three ingredients: bread, meat, and cheese. Nothing else.</KeyTakeaway>
-        <RecipeCard title="Deli Sandwiches" subtitle="Per sandwich">
-          <NumberedSteps steps={[
-            <>Two slices of bread.</>,
-            <><strong>Minimum 2 oz deli meat.</strong></>,
-            <><strong>2 slices of cheese</strong> — one on each side.</>,
-          ]} />
-        </RecipeCard>
-        <CalloutBox type="critical" title="No Extras">
-          <strong>No condiments or vegetables</strong> — they speed up spoilage during transport.
+        <KeyTakeaway>Every deli sandwich needs at least 2 ounces of meat. Here's how to measure.</KeyTakeaway>
+        <BulletList items={[
+          <><strong>Check the serving size</strong> on your packaging to see how many slices equal 2 oz.</>,
+          <><strong>Thinner sliced meats</strong> often need 3–4 slices to reach 2 oz.</>,
+          <><strong>Grams on the label?</strong> 56 g = 2 oz. Many packages list serving sizes in grams.</>,
+        ]} />
+        <CalloutBox type="critical" title="Nothing Extra">
+          <strong>No condiments, no vegetables</strong> — just bread, meat, and cheese. Extras don't hold up during storage and transport.
         </CalloutBox>
       </div>
     ),
   },
   {
-    title: "Packaging",
+    title: "PB&J: Building the Sandwich",
     content: (
       <div>
-        <KeyTakeaway>Bag individually, group into loaf bags, and get them back in the fridge.</KeyTakeaway>
+        <KeyTakeaway>Smooth peanut butter, jelly (not jam), and keep it neat.</KeyTakeaway>
+        <RecipeCard title="PB&J Sandwich" subtitle="Per sandwich">
+          <NumberedSteps steps={[
+            <><strong>1 tbsp peanut butter</strong> on one slice of bread.</>,
+            <><strong>2 tbsp peanut butter</strong> on the other slice.</>,
+            <><strong>1 tbsp jelly</strong> on one of the slices — keep it in the center of the bread.</>,
+            <>Place the slices together gently.</>,
+          ]} />
+        </RecipeCard>
+        <BulletList items={[
+          <><strong>Keep it neat.</strong> Make sure ingredients aren't oozing over the sides of the sandwich.</>,
+          <><strong>Tip:</strong> Our inventory calculator tool links to plastic spatulas that are great for getting peanut butter and jelly out of jars and onto bread without too much mess.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Packaging: Bagging",
+    content: (
+      <div>
+        <KeyTakeaway>Every sandwich — deli and PB&J — gets bagged the same way.</KeyTakeaway>
         <NumberedSteps steps={[
-          <>Bag each sandwich individually in a zip-top bag. Press out air.</>,
-          <>Group bagged sandwiches into bread loaf bags — <strong>PB&J and deli separate.</strong></>,
-          <>Close loaf bags with twist ties.</>,
-          <>Put finished loaves back in the fridge right away.</>,
+          <>Place each sandwich individually into a <strong>sandwich-sized zip-top bag.</strong></>,
+          <>Gently squeeze out the excess air without smushing the sandwich.</>,
+          <>Seal the bag completely.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Packaging: Loaf Bags",
+    content: (
+      <div>
+        <KeyTakeaway>Stack bagged sandwiches back into the bread bag they came from.</KeyTakeaway>
+        <BulletList items={[
+          <><strong>Stack the bagged sandwiches</strong> back into the loaf bag the bread came in.</>,
+          <><strong>PB&J and deli go in separate loaf bags.</strong></>,
+          <><strong>Seal with a twist tie.</strong> Never tape or tie the bag shut — twist ties make it easy to store, count, and transport.</>,
+          <><strong>Back in the fridge</strong> right away.</>,
         ]} />
         <p style={{ color: MUTED, fontSize: 13, fontStyle: "italic", marginTop: 12 }}>You don't need to label — your host provides labels.</p>
       </div>
@@ -359,8 +405,10 @@ const MAKER_STEPS = [
     content: (
       <div>
         <FAQList items={[
-          { q: "Can I add mustard, mayo, lettuce, or tomato?", a: "No. Bread, meat, and cheese only. Extras accelerate spoilage." },
+          { q: "Can I add mustard, mayo, lettuce, or tomato?", a: "No. Bread, meat, and cheese only — no condiments, no vegetables. They don't hold up during storage and transport." },
           { q: "Can I use deli counter meat?", a: "No. Prepackaged only — clearer expiration tracking and controlled processing." },
+          { q: "Can I use crunchy peanut butter or jam?", a: "No. Smooth peanut butter only, and jelly only (not jam, preserves, or fruit spread). Strawberry or grape." },
+          { q: "Why can't I use Kraft singles?", a: "They aren't as nutritious as real American cheese, and they turn to mush on the sandwiches before they can be eaten." },
           { q: "What if I can't deliver by Thursday?", a: "No worries — just skip that week. It's better to wait than to deliver sandwiches that sat too long." },
         ]} />
       </div>
