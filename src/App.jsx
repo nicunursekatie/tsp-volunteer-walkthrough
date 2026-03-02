@@ -162,67 +162,6 @@ const FOOD_SAFETY_STEPS = [
     ),
   },
   {
-    title: "Fridge Tips",
-    content: (
-      <div>
-        <KeyTakeaway>A few easy habits keep your fridge working effectively and your ingredients and sandwiches safe.</KeyTakeaway>
-        <BulletList items={[
-          <><strong>Don't overfill.</strong> Overpacked fridge blocks air flow creating warm spots, even if the thermometer reads fine.</>,
-          <><strong>Minimize door openings.</strong> Cold air escapes fast. In and out quickly.</>,
-          <><strong>Last minute trick:</strong> If you need to deliver your sandwiches soon, place twist tied loaf bags in the freezer for 10-15 minutes to get them cold before moving them to the cooler.</>,
-        ]} />
-      </div>
-    ),
-  },
-  {
-    title: "Cooler Rules",
-    content: (
-      <div>
-        <KeyTakeaway>Coolers maintain cold — they don't create it. Only pack food that's already fridge-cold.</KeyTakeaway>
-        <BulletList items={[
-          <><strong>Put coolers in your vehicle cabin where the A/C can circulate, not the trunk.</strong> A/C doesn't reach the trunk.</>,
-          <><strong>Layer ice packs</strong> between loaves and at the sides of the cooler so all loaves are in contact with them.</>,
-          <><strong>Pack tight.</strong> Less air in a cooler makes it more effective at insulation.</>,
-        ]} />
-      </div>
-    ),
-  },
-  {
-    title: "More Cooler Tips",
-    content: (
-      <div>
-        <KeyTakeaway>Two more things that trip will ensure your sandwiches are safe and chilly.</KeyTakeaway>
-        <BulletList items={[
-          <><strong>Keep lids sealed.</strong> Every opening lets cold air out and warm air in.</>,
-          <><strong>Hot cooler?</strong> Bring it inside to cool down before packing. Never pack a warm cooler.</>,
-        ]} />
-      </div>
-    ),
-  },
-  {
-    title: "Hygiene: Steps 1 & 2",
-    content: (
-      <div>
-        <KeyTakeaway>These two steps come first, every time.</KeyTakeaway>
-        <NumberedSteps steps={[
-          <><strong>Hair first</strong> — tie back, hat, or hairnet.</>,
-          <><strong>Wash hands</strong> — soap & water, 20+ seconds. Sanitizer is <em>not</em> a substitute.</>,
-        ]} />
-      </div>
-    ),
-  },
-  {
-    title: "Hygiene: Steps 3 & 4",
-    content: (
-      <div>
-        <NumberedSteps steps={[
-          <><strong>Glove up</strong> — change if you touch your face, phone, or anything non-food.</>,
-          <><strong>Clean surfaces</strong> — wipe everything food will touch. Use a disposable tablecloth.</>,
-        ]} />
-      </div>
-    ),
-  },
-  {
     title: "A Common Mistake",
     content: (
       <div>
@@ -239,6 +178,7 @@ const FOOD_SAFETY_STEPS = [
 ];
 
 const MAKER_STEPS = [
+  // ── Shopping ──
   {
     title: "Shopping: What to Buy",
     content: (
@@ -247,6 +187,7 @@ const MAKER_STEPS = [
         <BulletList items={[
           <><strong>Prepackaged deli meat & cheese only</strong> — no deli counter slicing.</>,
           <><strong>Check dates:</strong> at least 7 days past your drop-off.</>,
+          <><strong>Grab meat and cheese last</strong> — right before checkout.</>,
         ]} />
       </div>
     ),
@@ -258,7 +199,7 @@ const MAKER_STEPS = [
         <KeyTakeaway>Cold items need to stay cold from the moment you buy them.</KeyTakeaway>
         <BulletList items={[
           <><strong>Bring a cooler with ice packs</strong> to the store for the drive home.</>,
-          <><strong>Into the fridge within 30 minutes</strong> of purchase.</>,
+          <><strong>Into the fridge immediately</strong> when you get home.</>,
         ]} />
       </div>
     ),
@@ -277,14 +218,33 @@ const MAKER_STEPS = [
       </div>
     ),
   },
+  // ── Time to Make Your Sandwiches ──
   {
-    title: "Timing",
+    title: "Time to Make Your Sandwiches",
     content: (
       <div>
-        <KeyTakeaway>Make on Wednesday (or Tuesday evening). Deliver to your host within 24 hours.</KeyTakeaway>
+        <KeyTakeaway>Before you start, get yourself and your workspace ready.</KeyTakeaway>
+        <NumberedSteps steps={[
+          <><strong>Hair first</strong> — tie back, hat, or hairnet.</>,
+          <><strong>Wash hands</strong> — soap & water, 20+ seconds. Sanitizer is <em>not</em> a substitute.</>,
+          <><strong>Glove up</strong> — change if you touch your face, phone, or anything non-food.</>,
+          <><strong>Clean surfaces</strong> — wipe everything food will touch. Use a disposable tablecloth.</>,
+        ]} />
+      </div>
+    ),
+  },
+  {
+    title: "Timing & Batches",
+    content: (
+      <div>
+        <KeyTakeaway>Make on Wednesday (or Tuesday evening). Only take out what you need.</KeyTakeaway>
         <CalloutBox type="teal" title="The Window">
           Sandwiches must go from your kitchen to your host's fridge <strong>within 24 hours</strong> of assembly.
         </CalloutBox>
+        <BulletList items={[
+          <><strong>Work one package at a time.</strong> Only take out as much meat and cheese as you need for one loaf of sandwiches.</>,
+          <><strong>Refrigerate the rest</strong> while you work.</>,
+        ]} />
       </div>
     ),
   },
@@ -300,14 +260,6 @@ const MAKER_STEPS = [
             <><strong>2 tsp jelly</strong> on top of the 2-tbsp side.</>,
           ]} />
         </RecipeCard>
-      </div>
-    ),
-  },
-  {
-    title: "PB&J: Finishing Up",
-    content: (
-      <div>
-        <KeyTakeaway>Press, don't cut. Bag individually.</KeyTakeaway>
         <BulletList items={[
           <>Press slices together. <strong>Don't cut.</strong></>,
           <>Bag individually in a zip-top bag. Press out air.</>,
@@ -319,7 +271,7 @@ const MAKER_STEPS = [
     title: "Deli: Building the Sandwich",
     content: (
       <div>
-        <KeyTakeaway>Three ingredients: bread, meat, and cheese.</KeyTakeaway>
+        <KeyTakeaway>Three ingredients: bread, meat, and cheese. Nothing else.</KeyTakeaway>
         <RecipeCard title="Deli Sandwiches" subtitle="Per sandwich">
           <NumberedSteps steps={[
             <>Two slices of bread.</>,
@@ -327,14 +279,6 @@ const MAKER_STEPS = [
             <><strong>2 slices of cheese</strong> — one on each side.</>,
           ]} />
         </RecipeCard>
-      </div>
-    ),
-  },
-  {
-    title: "Deli: No Extras",
-    content: (
-      <div>
-        <KeyTakeaway>Don't cut. Bag individually. And absolutely nothing extra.</KeyTakeaway>
         <CalloutBox type="critical" title="No Extras">
           <strong>No condiments or vegetables</strong> — they speed up spoilage during transport.
         </CalloutBox>
@@ -342,41 +286,60 @@ const MAKER_STEPS = [
     ),
   },
   {
-    title: "Packaging: Batches",
+    title: "Packaging",
     content: (
       <div>
-        <KeyTakeaway>Work in batches. Only one package of meat/cheese out at a time.</KeyTakeaway>
-        <BulletList items={[
-          <>Bag each sandwich individually in a zip-top bag.</>,
-          <>Refrigerate the rest while you work.</>,
-        ]} />
-      </div>
-    ),
-  },
-  {
-    title: "Packaging: Loaf Bags",
-    content: (
-      <div>
-        <KeyTakeaway>Group sandwiches into loaf bags. Keep PB&J and deli separate.</KeyTakeaway>
-        <BulletList items={[
+        <KeyTakeaway>Bag individually, group into loaf bags, and get them back in the fridge.</KeyTakeaway>
+        <NumberedSteps steps={[
+          <>Bag each sandwich individually in a zip-top bag. Press out air.</>,
           <>Group bagged sandwiches into bread loaf bags — <strong>PB&J and deli separate.</strong></>,
           <>Close loaf bags with twist ties.</>,
-          <>You do <strong>not</strong> need to label — your host provides labels.</>,
+          <>Put finished loaves back in the fridge right away.</>,
+        ]} />
+        <p style={{ color: MUTED, fontSize: 13, fontStyle: "italic", marginTop: 12 }}>You don't need to label — your host provides labels.</p>
+      </div>
+    ),
+  },
+  // ── Transport & Drop-off ──
+  {
+    title: "Getting Ready to Deliver",
+    content: (
+      <div>
+        <KeyTakeaway>Let your sandwiches chill before they travel. A few quick steps make a big difference.</KeyTakeaway>
+        <BulletList items={[
+          <><strong>Cool at least 30 minutes.</strong> After bagging and twist-tying, leave loaves in the fridge at least 30 minutes before putting them in a cooler.</>,
+          <><strong>Last-minute trick:</strong> Place twist-tied loaf bags in the freezer for 10–15 minutes to get them extra cold before the cooler.</>,
+          <><strong>Check your fridge:</strong> Don't overfill it — overpacking blocks airflow and creates warm spots.</>,
         ]} />
       </div>
     ),
   },
   {
-    title: "Transport",
+    title: "Packing Your Cooler",
     content: (
       <div>
-        <KeyTakeaway>Start with fridge-cold sandwiches and head straight to your host.</KeyTakeaway>
+        <KeyTakeaway>Coolers maintain cold — they don't create it. Everything going in should already be fridge-cold.</KeyTakeaway>
         <BulletList items={[
-          <><strong>Fridge-cold first.</strong> Coolers maintain cold — they don't create it.</>,
-          <><strong>Ice packs</strong> layered between loaves.</>,
-          <><strong>Cabin, not trunk.</strong></>,
-          <><strong>Drive direct.</strong> No stops, no errands.</>,
+          <><strong>Hot cooler?</strong> Bring it inside to cool down first. Never pack a warm cooler.</>,
+          <><strong>Layer ice packs</strong> between loaves and along the sides so every loaf is in contact with cold.</>,
+          <><strong>Pack tight.</strong> Less air = stays colder longer.</>,
+          <><strong>Keep the lid sealed.</strong> Every opening lets cold air out and warm air in.</>,
         ]} />
+      </div>
+    ),
+  },
+  {
+    title: "On the Road",
+    content: (
+      <div>
+        <KeyTakeaway>Head straight to your host — no stops, no errands.</KeyTakeaway>
+        <BulletList items={[
+          <><strong>Cooler in the cabin, not the trunk.</strong> A/C doesn't reach the trunk.</>,
+          <><strong>Drive direct.</strong> Every extra minute is warm time counting against the 2-hour rule.</>,
+        ]} />
+        <CalloutBox type="teal" title="At Your Host's">
+          Sign in, apply TSP-provided labels to your loaves, and get them into the host's fridge. That's it — you're done!
+        </CalloutBox>
       </div>
     ),
   },
