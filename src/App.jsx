@@ -165,7 +165,7 @@ const FOOD_SAFETY_STEPS = [
     title: "Fridge Tips",
     content: (
       <div>
-        <KeyTakeaway>A few easy habits keep your fridge working harder for you.</KeyTakeaway>
+        <KeyTakeaway>A few easy habits keep your fridge working effectively and your ingredients and sandwiches safe.</KeyTakeaway>
         <BulletList items={[
           <><strong>Don't overfill.</strong> Overpacked fridge = warm spots, even if the thermometer reads fine.</>,
           <><strong>Minimize door openings.</strong> Cold air escapes fast. In and out quickly.</>,
